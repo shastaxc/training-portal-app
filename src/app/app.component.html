@@ -2,32 +2,40 @@
 <div id="pg-container">
 
   <!-- Header Frame -->
-  <div id="header-frame" layout="row">
+  <mat-toolbar id="header-frame">
     <!-- Left Header Container -->
     <div id="head-left">
-      Head Left
+      Logo
     </div>
 
     <!-- Middle Header Container -->
     <div id="head-mid">
-      <div class="navitem">Head Mid1</div>
-      <div class="navitem">Head Mid2</div>
-      <div class="navitem">Head Mid3</div>
+      <button mat-button>Current Operations</button>
+      <button mat-button>Training Readiness</button>
+      <button mat-button>Knowledge Management</button>
+      <button mat-button>Program Data</button>
     </div>
 
     <!-- Right Header Container -->
     <div id="head-right">
-      <button mat-fab>
+        <button mat-icon-button>
+          <mat-icon>person</mat-icon>
+        </button>
+      <button mat-icon-button>
         <mat-icon>settings</mat-icon>
       </button>
     </div>
-  </div>
+  </mat-toolbar>
 
   <!-- Content Frame -->
-  <div id="content-frame" layout="column">Content</div>
+  <div id="content-frame">
+    <div id="worldmap">
+      <img src="../assets/images/world-atlas1.png" />
+    </div>
+  </div>
 
   <!-- Footer Frame -->
-  <div id="footer-frame" layout="row">
+  <div id="footer-frame">
     <!-- Left Footer Container -->
     <div id="foot-left"></div>
     <!-- Middle Footer Container -->

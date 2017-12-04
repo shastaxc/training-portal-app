@@ -2,7 +2,6 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-
 #head-left{
   display:flex;
   padding:3px;
@@ -16,9 +15,20 @@
   padding:3px 15px 3px 15px;
 }
 
+#head-mid > button{
+  margin-right:10px;
+  background:$primary-color;
+}
+
 #head-right{
   display:flex;
   flex-direction:row;
   justify-content:flex-end;
-  padding:3px 10px 3px 10px;
+  padding:3px;
+}
+
+#head-right > button{
+  margin-left:3px;
+  margin-right:3px;
+  background:$primary-color;
 }
