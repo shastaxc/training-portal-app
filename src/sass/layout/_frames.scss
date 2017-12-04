@@ -1,0 +1,28 @@
+/* Highest level layout styling */
+
+#pg-container{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  background-image:url("~/assets/images/camobg-pale.jpg");
+  background-repeat:repeat;
+}
+
+#header-frame{
+  display:flex;
+  flex-direction:row;
+  background:$dark-blue;
+}
+
+#content-frame{
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+  padding:3px;
+}
+
+#footer-frame{
+  display:flex;
+  flex-direction:row;
+  padding:3px;
+}

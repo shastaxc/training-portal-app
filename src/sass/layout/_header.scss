@@ -1,3 +1,24 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+
+#head-left{
+  display:flex;
+  padding:3px;
+}
+
+#head-mid{
+  display:flex;
+  flex-direction:row;
+  justify-content:left;
+  flex-grow:1;
+  padding:3px 15px 3px 15px;
+}
+
+#head-right{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  padding:3px;
+}
