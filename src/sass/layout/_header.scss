@@ -2,8 +2,14 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-#head-left{
+#navbar{
   display:flex;
+  flex-direction:row;
+  background:$secondary-color;
+  overflow:hidden;
+}
+
+#head-left{
   padding:3px;
 }
 

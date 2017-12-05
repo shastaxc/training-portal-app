@@ -6,12 +6,16 @@ import { MaterialModule } from './modules/material.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { WorldmapComponent } from './worldmap/worldmap.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    WorldmapComponent
   ],
   imports: [
     BrowserModule,

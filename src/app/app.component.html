@@ -2,49 +2,17 @@
 <div id="pg-container">
 
   <!-- Header Frame -->
-  <mat-toolbar id="header-frame">
-    <!-- Left Header Container -->
-    <div id="head-left">
-      Logo
-    </div>
-
-    <!-- Middle Header Container -->
-    <div id="head-mid">
-      <button mat-button>Current Operations</button>
-      <button mat-button>Training Readiness</button>
-      <button mat-button>Knowledge Management</button>
-      <button mat-button>Program Data</button>
-    </div>
-
-    <!-- Right Header Container -->
-    <div id="head-right">
-        <button mat-icon-button>
-          <mat-icon>person</mat-icon>
-        </button>
-      <button mat-icon-button>
-        <mat-icon>settings</mat-icon>
-      </button>
-    </div>
-  </mat-toolbar>
+  <div id="header-frame">
+    <app-navbar></app-navbar>
+  </div>
 
   <!-- Content Frame -->
   <div id="content-frame">
-    <div id="worldmap">
-      <img src="../assets/images/world-atlas-filled.png" />
-    </div>
+    <app-worldmap></app-worldmap>
   </div>
 
   <!-- Footer Frame -->
   <div id="footer-frame">
-    <!-- Left Footer Container -->
-    <div id="foot-left"></div>
-    <!-- Middle Footer Container -->
-    <div id="foot-mid">
-      Miscellaneous info such as address and disclaimers and licenses.
-      Maybe put a contact link down here with a phone number.
-      We could even throw in another logo right here.
-    </div>
-    <!-- Right Footer Container -->
-    <div id="foot-right"></div>
+    <app-footer></app-footer>
   </div>
 </div>
