@@ -1,23 +1,23 @@
 <mat-toolbar id="navbar">
   <!-- Left Header Container -->
   <div id="head-left">
-    <a routerLink="/">Logo</a>
+    <a routerLink="/">LogoHere</a>
   </div>
 
   <!-- Middle Header Container -->
   <div id="head-mid">
     <button mat-button routerLink="/currentops">Current Operations</button>
-    <button mat-button>Training Readiness</button>
-    <button mat-button>Knowledge Management</button>
-    <button mat-button>Program Data</button>
+    <button mat-button routerLink="/readiness">Training Readiness</button>
+    <button mat-button routerLink="/knowmgmt">Knowledge Management</button>
+    <button mat-button routerLink="/programdata">Program Data</button>
   </div>
 
   <!-- Right Header Container -->
   <div id="head-right">
-    <button mat-icon-button>
+    <button mat-icon-button routerLink="/account">
       <mat-icon>person</mat-icon>
     </button>
-    <button mat-icon-button>
+    <button mat-icon-button routerLink="/settings">
       <mat-icon>settings</mat-icon>
     </button>
   </div>

@@ -15,6 +15,8 @@ import { KnowMgmtComponent } from './pages/know-mgmt/know-mgmt.component';
 import { ProgramDataComponent } from './pages/program-data/program-data.component';
 
 import { WorldmapComponent } from './worldmap/worldmap.component';
+import { AccountComponent } from './pages/account/account.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { WorldmapComponent } from './worldmap/worldmap.component';
     TrainingReadinessComponent,
     KnowMgmtComponent,
     ProgramDataComponent,
-    WorldmapComponent
+    WorldmapComponent,
+    AccountComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
