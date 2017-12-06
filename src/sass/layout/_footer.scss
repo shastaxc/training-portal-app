@@ -5,23 +5,21 @@
 #footer-container{
   display:flex;
   flex-direction:row;
-  padding:3px;
+  padding:2px;
   overflow:hidden;
+  background:$secondary-color;
 }
 
 #foot-left{
   display:flex;
   flex-basis:20%;
-  padding:3px;
 }
 
 #foot-mid{
   text-align:center;
   flex-grow:1;
-  padding:3px;
 }
 
 #foot-right{
   flex-basis:20%;
-  padding:3px;
 }
