@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KnowMgmtComponent implements OnInit {
 
+  title='Knowledge Management';
+
   constructor() { }
 
   ngOnInit() {

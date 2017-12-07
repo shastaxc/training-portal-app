@@ -17,6 +17,13 @@ import { ProgramDataComponent } from './pages/program-data/program-data.componen
 import { WorldmapComponent } from './components/worldmap/worldmap.component';
 import { AccountComponent } from './pages/account/account.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { AarComponent } from './pages/know-mgmt/aar/aar.component';
+import { SitrepComponent } from './pages/know-mgmt/sitrep/sitrep.component';
+import { LessonsLearnedComponent } from './pages/know-mgmt/lessons-learned/lessons-learned.component';
+import { FieldObservationsComponent } from './pages/know-mgmt/field-observations/field-observations.component';
+import { CourseHistoryComponent } from './pages/know-mgmt/course-history/course-history.component';
+import { SurveysComponent } from './pages/know-mgmt/surveys/surveys.component';
+import { TrainingFaqsComponent } from './pages/know-mgmt/training-faqs/training-faqs.component';
 
 
 @NgModule({
@@ -30,7 +37,14 @@ import { SettingsComponent } from './pages/settings/settings.component';
     ProgramDataComponent,
     WorldmapComponent,
     AccountComponent,
-    SettingsComponent
+    SettingsComponent,
+    AarComponent,
+    SitrepComponent,
+    LessonsLearnedComponent,
+    FieldObservationsComponent,
+    CourseHistoryComponent,
+    SurveysComponent,
+    TrainingFaqsComponent
   ],
   imports: [
     BrowserModule,
