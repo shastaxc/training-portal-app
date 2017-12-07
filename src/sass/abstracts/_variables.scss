@@ -2,6 +2,20 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+/// Colors
+$light-grey: rgb(237, 237, 237);
+$mid-grey: rgb(153, 153, 153);
+$dark-grey: rgb(68, 68, 68);
+$very-dark-grey: rgb(34, 34, 34);
+$neon-pink: rgb(229, 0, 80);
+$dark-blue: #171a42;
+$mid-blue: #2b70ef;
+$light-blue: #b4d0ff;
+$dark-teal: #23a2b5;
+$light-tan: #fdf3ca;
+$dark-tan: #a79d73;
+
+
 
 /// Regular font family
 /// @type List
@@ -10,42 +24,6 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// Code (monospace) font family
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-
-
-
-
-/// Copy text color
-/// @type Color
-$text-color: rgb(34, 34, 34) !default;
-
-/// Main brand color
-/// @type Color
-$brand-color: rgb(229, 0, 80) !default;
-
-/// Light grey
-/// @type Color
-$light-grey: rgb(237, 237, 237) !default;
-
-/// Medium grey
-/// @type Color
-$mid-grey: rgb(153, 153, 153) !default;
-
-/// Dark grey
-/// @type Color
-$dark-grey: rgb(68, 68, 68) !default;
-
-/// Dark blue
-/// @type Color
-$dark-blue: #171a42;
-$mid-blue: #2b70ef;
-$light-blue: #b4d0ff;
-$dark-teal: #23a2b5;
-$light-tan: #fdf3ca;
-$dark-tan: #a79d73;
-
-$primary-color:$light-tan;
-$secondary-color:$dark-tan;
 
 
 

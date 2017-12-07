@@ -1,3 +1,32 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the top component.
 // -----------------------------------------------------------------------------
+
+#pg-container{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  background-image:url("~/assets/images/camobg-pale.jpg");
+  background-repeat:repeat;
+  overflow:hidden;
+}
+
+#header-frame{
+  border-bottom-width:1px;
+  border-bottom-color:#3f3208;
+  border-bottom-style:solid;
+}
+
+#content-frame{
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+  padding:8px 3px 8px 3px;
+  overflow:hidden;
+}
+
+#footer-frame{
+  border-top-width:1px;
+  border-top-color:#3f3208;
+  border-top-style:solid;
+}

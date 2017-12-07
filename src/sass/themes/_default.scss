@@ -2,3 +2,12 @@
 // When having several themes, this file contains everything related to the
 // default one.
 // -----------------------------------------------------------------------------
+@import
+  '~@angular/material/theming',
+  '../abstracts/variables';
+@include mat-core();
+
+$primary-color:$light-tan;
+$secondary-color:$dark-tan;
+$text-color: $very-dark-grey;
+$brand-color: $neon-pink;

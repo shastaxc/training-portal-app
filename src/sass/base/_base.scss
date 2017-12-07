@@ -5,6 +5,11 @@
 /**
  * Set up a decent box model on the root element
  */
+html, body{
+  height:100%;
+  margin:0;
+}
+
 html {
   box-sizing: border-box;
 }

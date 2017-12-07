@@ -1,6 +1,5 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+@import
+  '../../../sass/themes/default';
 
 #navbar{
   display:flex;
@@ -22,7 +21,7 @@
 }
 
 #head-mid > button{
-  margin-right:10px;
+  margin-right:5px;
   background:$primary-color;
 }
 

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { WorldmapComponent } from '../worldmap/worldmap.component';
+import { WorldmapComponent } from '../components/worldmap/worldmap.component';
 import { CurrentOpsComponent } from '../pages/current-ops/current-ops.component';
 import { TrainingReadinessComponent } from '../pages/training-readiness/training-readiness.component';
 import { KnowMgmtComponent } from '../pages/know-mgmt/know-mgmt.component';
