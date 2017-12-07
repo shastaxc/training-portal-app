@@ -16,13 +16,13 @@ import { SurveysComponent } from '../pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from '../pages/know-mgmt/training-faqs/training-faqs.component';
 
 const routes: Routes = [
-  { path: '', component: WorldmapComponent, pathMatch: 'full'},
-  { path: 'currentops', component: CurrentOpsComponent},
-  { path: 'readiness', component: TrainingReadinessComponent},
-  { path: 'knowmgmt', component: KnowMgmtComponent},
-  { path: 'programdata', component: ProgramDataComponent},
-  { path: 'account', component: AccountComponent},
-  { path: 'settings', component: SettingsComponent},
+  { path: '', component: WorldmapComponent, pathMatch: 'full' },
+  { path: 'currentops', component: CurrentOpsComponent },
+  { path: 'readiness', component: TrainingReadinessComponent },
+  { path: 'knowmgmt', component: KnowMgmtComponent },
+  { path: 'programdata', component: ProgramDataComponent },
+  { path: 'account', component: AccountComponent },
+  { path: 'settings', component: SettingsComponent },
 
   { path: 'aar', component: AarComponent },
   { path: 'sitrep', component: SitrepComponent },
@@ -30,7 +30,9 @@ const routes: Routes = [
   { path: 'fieldobs', component: FieldObservationsComponent },
   { path: 'coursehist', component: CourseHistoryComponent },
   { path: 'surveys', component: SurveysComponent },
-  { path: 'trainingfaqs', component: TrainingFaqsComponent }
+  { path: 'trainingfaqs', component: TrainingFaqsComponent },
+
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
