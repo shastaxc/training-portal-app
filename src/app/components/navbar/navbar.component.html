@@ -1,11 +1,14 @@
-<mat-toolbar id="navbar">
+<div id="navbar">
   <!-- Left Header Container -->
-  <div id="head-left">
-    <a routerLink="/">LogoHere</a>
+  <div id="head-home" routerLink="/">
+    <button mat-button>
+      <mat-icon>home</mat-icon>
+    </button>
+    <div class="mat-button-focus-overlay"></div>
   </div>
 
   <!-- Middle Header Container -->
-  <div id="head-mid">
+  <div id="head-links">
     <button mat-button routerLink="/currentops">Current Operations</button>
     <button mat-button routerLink="/readiness">Training Readiness</button>
     <button mat-button routerLink="/knowmgmt">Knowledge Management</button>
@@ -13,12 +16,12 @@
   </div>
 
   <!-- Right Header Container -->
-  <div id="head-right">
-    <button mat-icon-button routerLink="/account">
+  <div id="head-personal">
+    <button mat-button class="circular" routerLink="/account">
       <mat-icon>person</mat-icon>
     </button>
-    <button mat-icon-button routerLink="/settings">
+    <button mat-button class="circular" routerLink="/settings">
       <mat-icon>settings</mat-icon>
     </button>
   </div>
-</mat-toolbar>
+</div>

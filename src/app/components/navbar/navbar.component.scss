@@ -1,39 +1,77 @@
 @import
   '../../../sass/themes/default';
 
+.circular{
+  border-radius:50%;
+}
+
 #navbar{
   display:flex;
   flex-direction:row;
   background:$secondary-color;
   overflow:hidden;
+  padding:0;
 }
 
-#head-left{
-  padding:3px;
-}
-
-#head-mid{
+#head-home{
   display:flex;
-  flex-direction:row;
-  justify-content:left;
+  align-items:center;
+  padding:8px 0px;
+  margin:0px;
+  cursor:pointer;
+}
+/*
+#head-home:hover .circular-wrapper{
+  background:$dark-hover;
+}
+*/
+#head-home > button{
+  background:$primary-color;
+  padding:0;
+  margin:0px 10px;
+}
+
+#head-home .mat-icon{
+  width:34px;
+  height:34px;
+  text-align:center;
+  padding:0px;
+}
+
+#head-home .material-icons{
+  font-size:34px;
+}
+
+#head-links{
+  display:flex;
+  align-items:center;
   flex-grow:1;
-  padding:3px 15px 3px 15px;
+  padding:8px 0px;
+  margin:0px;
 }
 
-#head-mid > button{
-  margin-right:5px;
+#head-links > button{
+  margin:0px 2px;
   background:$primary-color;
 }
 
-#head-right{
+#head-personal{
   display:flex;
-  flex-direction:row;
-  justify-content:flex-end;
-  padding:3px;
+  align-items:center;
+  padding:8px 0px;
+  margin:0px;
 }
 
-#head-right > button{
-  margin-left:3px;
-  margin-right:3px;
+#head-personal > button{
+  margin: 0px 2px;
   background:$primary-color;
+  padding:0px;
+  min-width:36px;
+}
+
+#head-personal > :first-child{
+  margin-left:10px;
+}
+#head-personal > :last-child{
+  margin-right:10px;
 }
