@@ -14,9 +14,9 @@ const routes: Routes = [
   { path: 'currentops', component: CurrentOpsComponent},
   { path: 'readiness', component: TrainingReadinessComponent},
   { path: 'knowmgmt', component: KnowMgmtComponent},
-  { path: 'programdata', component: ProgramDataComponent}
+  { path: 'programdata', component: ProgramDataComponent},
   { path: 'account', component: AccountComponent},
-  { path: 'settings', component: SettingsComponent},
+  { path: 'settings', component: SettingsComponent}
 ];
 
 @NgModule({
