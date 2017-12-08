@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgramDataComponent implements OnInit {
 
-  title='Program Data';
+  title = 'Program Data';
 
   constructor() { }
 

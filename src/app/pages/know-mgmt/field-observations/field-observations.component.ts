@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FieldObservationsComponent implements OnInit {
 
-  title='Field Observations';
+  title = 'Field Observations';
 
   constructor() { }
 

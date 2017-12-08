@@ -24,7 +24,7 @@ import { FieldObservationsComponent } from './pages/know-mgmt/field-observations
 import { CourseHistoryComponent } from './pages/know-mgmt/course-history/course-history.component';
 import { SurveysComponent } from './pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from './pages/know-mgmt/training-faqs/training-faqs.component';
-import { SchedulerComponent } from './current-ops/scheduler/scheduler.component';
+import { SchedulerComponent } from './pages/current-ops/scheduler/scheduler.component';
 
 
 @NgModule({

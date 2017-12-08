@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentOpsComponent implements OnInit {
 
-  title='Current Operations';
+  title = 'Current Operations';
 
   constructor() { }
 

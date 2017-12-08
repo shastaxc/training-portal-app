@@ -14,6 +14,7 @@ import { FieldObservationsComponent } from '../pages/know-mgmt/field-observation
 import { CourseHistoryComponent } from '../pages/know-mgmt/course-history/course-history.component';
 import { SurveysComponent } from '../pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from '../pages/know-mgmt/training-faqs/training-faqs.component';
+import { SchedulerComponent } from '../pages/current-ops/scheduler/scheduler.component';
 
 const routes: Routes = [
   { path: '', component: WorldmapComponent, pathMatch: 'full' },
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: 'programdata', component: ProgramDataComponent },
   { path: 'account', component: AccountComponent },
   { path: 'settings', component: SettingsComponent },
+
+  { path: 'scheduler', component: SchedulerComponent },
 
   { path: 'aar', component: AarComponent },
   { path: 'sitrep', component: SitrepComponent },

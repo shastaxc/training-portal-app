@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AarComponent implements OnInit {
 
-  title='AAR';
+  title = 'AAR';
 
   constructor() { }
 

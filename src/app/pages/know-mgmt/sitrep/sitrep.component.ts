@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SitrepComponent implements OnInit {
 
-  title='Situation Reports';
+  title = 'Situation Reports';
 
   constructor() { }
 
