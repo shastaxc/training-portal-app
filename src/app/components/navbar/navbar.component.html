@@ -1,27 +1,40 @@
 <div id="navbar">
   <!-- Left Header Container -->
-  <div id="head-home" routerLink="/">
-    <button mat-button>
-      <mat-icon>home</mat-icon>
-    </button>
-    <div class="mat-button-focus-overlay"></div>
+  <div id="head-home">
+    <div class="big-btn-wrapper"routerLink="/">
+      <button mat-button>
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
   </div>
 
   <!-- Middle Header Container -->
   <div id="head-links">
-    <button mat-button routerLink="/currentops">Current Operations</button>
-    <button mat-button routerLink="/readiness">Training Readiness</button>
-    <button mat-button routerLink="/knowmgmt">Knowledge Management</button>
-    <button mat-button routerLink="/programdata">Program Data</button>
+    <div class="big-btn-wrapper" routerLink="/currentops">
+      <button mat-button>Current Operations</button>
+    </div>
+    <div class="big-btn-wrapper" routerLink="/readiness">
+      <button mat-button>Training Readiness</button>
+    </div>
+    <div class="big-btn-wrapper" routerLink="/knowmgmt">
+      <button mat-button>Knowledge Management</button>
+    </div>
+    <div class="big-btn-wrapper" routerLink="/programdata">
+      <button mat-button>Program Data</button>
+    </div>
   </div>
 
   <!-- Right Header Container -->
   <div id="head-personal">
-    <button mat-button class="circular" routerLink="/account">
-      <mat-icon>person</mat-icon>
-    </button>
-    <button mat-button class="circular" routerLink="/settings">
-      <mat-icon>settings</mat-icon>
-    </button>
+    <div class="big-btn-wrapper" routerLink="/account">
+      <button mat-button class="circular">
+        <mat-icon>person</mat-icon>
+      </button>
+    </div>
+    <div class="big-btn-wrapper" routerLink="/settings">
+      <button mat-button class="circular">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </div>
   </div>
 </div>

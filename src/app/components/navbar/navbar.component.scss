@@ -5,6 +5,15 @@
   border-radius:50%;
 }
 
+.big-btn-wrapper{
+  cursor:pointer;
+  height:52px;
+  display:flex;
+  align-items:center;
+  padding:0px 1px;
+  margin: 0px 2px;
+}
+
 #navbar{
   display:flex;
   flex-direction:row;
@@ -13,22 +22,26 @@
   padding:0;
 }
 
-#head-home{
-  display:flex;
-  align-items:center;
-  padding:8px 0px;
-  margin:0px;
-  cursor:pointer;
-}
-/*
-#head-home:hover .circular-wrapper{
-  background:$dark-hover;
-}
-*/
-#head-home > button{
+#navbar button{
   background:$primary-color;
-  padding:0;
-  margin:0px 10px;
+  margin:0px;
+}
+
+#head-home, #head-links, #head-personal {
+  padding:0px;
+  margin:0px;
+}
+
+#head-home > :first-child,
+#head-links > :first-child,
+#head-personal > :first-child{
+  margin-left:10px;
+}
+
+#head-home > :last-child,
+#head-links > :last-child,
+#head-personal > :last-child{
+  margin-right:10px;
 }
 
 #head-home .mat-icon{
@@ -44,34 +57,14 @@
 
 #head-links{
   display:flex;
-  align-items:center;
   flex-grow:1;
-  padding:8px 0px;
-  margin:0px;
-}
-
-#head-links > button{
-  margin:0px 2px;
-  background:$primary-color;
 }
 
 #head-personal{
   display:flex;
-  align-items:center;
-  padding:8px 0px;
-  margin:0px;
 }
 
-#head-personal > button{
-  margin: 0px 2px;
-  background:$primary-color;
+#head-personal button{
   padding:0px;
   min-width:36px;
-}
-
-#head-personal > :first-child{
-  margin-left:10px;
-}
-#head-personal > :last-child{
-  margin-right:10px;
 }
