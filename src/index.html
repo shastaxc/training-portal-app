@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <title>TrainingPortalApp</title>
-  <base href="/">
+  <!-- Script below adds base href independent of directory where index.html is executed -->
+  <script>document.write('<base href="' + document.location + '" />');
+  console.log(document.location);</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">

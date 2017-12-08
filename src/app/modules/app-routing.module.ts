@@ -36,7 +36,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  // Only use useHash to running a production build locally.
+  // Turn off useHash if running production build on web server.
+  imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
