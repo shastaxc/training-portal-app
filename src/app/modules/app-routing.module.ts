@@ -15,6 +15,7 @@ import { CourseHistoryComponent } from '../pages/know-mgmt/course-history/course
 import { SurveysComponent } from '../pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from '../pages/know-mgmt/training-faqs/training-faqs.component';
 import { SchedulerComponent } from '../pages/current-ops/scheduler/scheduler.component';
+import { NotFoundComponent } from '../pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: WorldmapComponent, pathMatch: 'full' },
@@ -35,12 +36,13 @@ const routes: Routes = [
   { path: 'surveys', component: SurveysComponent },
   { path: 'trainingfaqs', component: TrainingFaqsComponent },
 
-  { path: '**', redirectTo: '' }
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' }
 ];
 
+// Only use useHash to running a production build locally.
+// Turn off useHash if running production build on web server.
 @NgModule({
-  // Only use useHash to running a production build locally.
-  // Turn off useHash if running production build on web server.
   imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
   exports: [ RouterModule ]
 })

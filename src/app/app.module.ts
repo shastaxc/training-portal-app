@@ -25,6 +25,7 @@ import { CourseHistoryComponent } from './pages/know-mgmt/course-history/course-
 import { SurveysComponent } from './pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from './pages/know-mgmt/training-faqs/training-faqs.component';
 import { SchedulerComponent } from './pages/current-ops/scheduler/scheduler.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { SchedulerComponent } from './pages/current-ops/scheduler/scheduler.comp
     CourseHistoryComponent,
     SurveysComponent,
     TrainingFaqsComponent,
-    SchedulerComponent
+    SchedulerComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
