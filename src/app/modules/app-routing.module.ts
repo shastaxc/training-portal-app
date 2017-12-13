@@ -16,6 +16,7 @@ import { SurveysComponent } from '../pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from '../pages/know-mgmt/training-faqs/training-faqs.component';
 import { SchedulerComponent } from '../pages/current-ops/scheduler/scheduler.component';
 import { NotFoundComponent } from '../pages/not-found/not-found.component';
+import { InstructorsComponent } from '../pages/training-readiness/instructors/instructors.component';
 
 const routes: Routes = [
   { path: '', component: WorldmapComponent, pathMatch: 'full' },
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
 
   { path: 'scheduler', component: SchedulerComponent },
+
+  { path: 'instructors', component: InstructorsComponent },
 
   { path: 'aar', component: AarComponent },
   { path: 'sitrep', component: SitrepComponent },
