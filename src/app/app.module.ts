@@ -27,6 +27,8 @@ import { TrainingFaqsComponent } from './pages/know-mgmt/training-faqs/training-
 import { SchedulerComponent } from './pages/current-ops/scheduler/scheduler.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { InstructorsComponent } from './pages/training-readiness/instructors/instructors.component';
+import { InstListComponent } from './pages/training-readiness/instructors/inst-list/inst-list.component';
+import { InstDetailComponent } from './pages/training-readiness/instructors/inst-detail/inst-detail.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { InstructorsComponent } from './pages/training-readiness/instructors/ins
     TrainingFaqsComponent,
     SchedulerComponent,
     NotFoundComponent,
-    InstructorsComponent
+    InstructorsComponent,
+    InstListComponent,
+    InstDetailComponent
   ],
   imports: [
     BrowserModule,

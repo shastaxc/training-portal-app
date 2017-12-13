@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstructorsComponent implements OnInit {
 
-  title = 'Instructors';
   constructor() { }
 
   ngOnInit() {

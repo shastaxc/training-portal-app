@@ -17,6 +17,8 @@ import { TrainingFaqsComponent } from '../pages/know-mgmt/training-faqs/training
 import { SchedulerComponent } from '../pages/current-ops/scheduler/scheduler.component';
 import { NotFoundComponent } from '../pages/not-found/not-found.component';
 import { InstructorsComponent } from '../pages/training-readiness/instructors/instructors.component';
+import { InstDetailComponent } from '../pages/training-readiness/instructors/inst-detail/inst-detail.component';
+import { InstListComponent } from '../pages/training-readiness/instructors/inst-list/inst-list.component';
 
 const routes: Routes = [
   { path: '', component: WorldmapComponent, pathMatch: 'full' },
@@ -29,7 +31,10 @@ const routes: Routes = [
 
   { path: 'scheduler', component: SchedulerComponent },
 
-  { path: 'instructors', component: InstructorsComponent },
+  { path: 'instructors', component: InstructorsComponent, children: [
+    { path: '', component: InstListComponent },
+    { path: ':id', component: InstDetailComponent }
+  ]},
 
   { path: 'aar', component: AarComponent },
   { path: 'sitrep', component: SitrepComponent },

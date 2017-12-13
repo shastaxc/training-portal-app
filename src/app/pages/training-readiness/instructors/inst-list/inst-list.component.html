@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-content>
+
+      <!-- List of instructors -->
+      <ul>
+        <li *ngFor="let instructor of instructors"><a routerLink="{{instructor.id}}">{{instructor.name}}</a></li>
+      </ul>
+
+    </mat-card-content>
+  </mat-card>
