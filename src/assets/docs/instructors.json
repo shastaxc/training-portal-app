@@ -1,0 +1,46 @@
+[
+    {
+        "name": "John Smith",
+        "availability": [
+            [
+                "131200(R) DEC 17",
+                "131400(R) DEC 17"
+            ],
+            [
+                "141200(R) DEC 17",
+                "141400(R) DEC 17"
+            ],
+            [
+                "161200(R) DEC 17",
+                "161400(R) DEC 17"
+            ]
+        ],
+        "certs": [
+            "cert1",
+            "cert2",
+            "cert3"
+        ]
+    },
+    {
+        "name": "Jack Harkness",
+        "availability": [
+            [
+                "131500(R) DEC 17",
+                "131730(R) DEC 17"
+            ],
+            [
+                "141600(R) DEC 17",
+                "141800(R) DEC 17"
+            ],
+            [
+                "160900(R) DEC 17",
+                "161300(R) DEC 17"
+            ]
+        ],
+        "certs": [
+            "cert3",
+            "cert4",
+            "cert5"
+        ]
+    }
+]
