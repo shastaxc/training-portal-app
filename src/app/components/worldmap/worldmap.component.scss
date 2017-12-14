@@ -1,8 +1,10 @@
-#worldmap{
-  width:100%;
-}
 
 :host{
+  background-image:url('../../../assets/images/world-atlas-filled.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
   width:85%;
+  flex-grow:1;
   margin:auto;
 }
