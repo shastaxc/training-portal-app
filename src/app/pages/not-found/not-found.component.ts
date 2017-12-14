@@ -10,7 +10,7 @@ export class NotFoundComponent implements OnInit {
 
   title = '404';
 
-  constructor(public _location: Location) { }
+  constructor(private _location: Location) { }
 
   goBack() {
     this._location.back();

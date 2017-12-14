@@ -1,9 +1,22 @@
+<div class="pane-back-wrapper">
+  <div (click)="goBack()" class="pane-back"></div>
+</div>
 <mat-card>
-  <mat-card-title>{{title}}</mat-card-title>
+  <mat-card-title>{{details.name}}</mat-card-title>
+  <mat-card-subtitle>id: {{details.id}}</mat-card-subtitle>
   <mat-card-content>
+    <div class="detail-content">
+      <!-- Instructor Details -->
+      Certifications:
+      <ul>
+        <li *ngFor="let cert of details.certs">{{cert}}</li>
+      </ul>
 
-    <!-- Instructor Details -->
-    You are viewing details for instructor {{id}}.
+      Availability:
+      <ul>
+        <li *ngFor="let avail of details.availability">{{parseDateTime(avail[0])}} to {{parseDateTime(avail[1])}}</li>
+      </ul>
 
+    </div>
   </mat-card-content>
 </mat-card>
