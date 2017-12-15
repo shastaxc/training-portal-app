@@ -19,6 +19,14 @@ import { NotFoundComponent } from '../pages/not-found/not-found.component';
 import { InstructorsComponent } from '../pages/training-readiness/instructors/instructors.component';
 import { InstDetailComponent } from '../pages/training-readiness/instructors/inst-detail/inst-detail.component';
 import { InstListComponent } from '../pages/training-readiness/instructors/inst-list/inst-list.component';
+import { CalendarComponent } from '../pages/current-ops/calendar/calendar.component';
+import { ChecklistComponent } from '../pages/current-ops/checklist/checklist.component';
+import { CoursesComponent } from '../pages/training-readiness/courses/courses.component';
+import { FacilitiesMaterialsComponent } from '../pages/training-readiness/facilities-materials/facilities-materials.component';
+import { TrainingAssetsComponent } from '../pages/training-readiness/training-assets/training-assets.component';
+import { CdrlComponent } from '../pages/program-data/cdrl/cdrl.component';
+import { AqlMetricsComponent } from '../pages/program-data/aql-metrics/aql-metrics.component';
+import { ConstantviewComponent } from '../pages/program-data/constantview/constantview.component';
 
 const routes: Routes = [
   { path: '', component: WorldmapComponent, pathMatch: 'full' },
@@ -29,12 +37,17 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent },
   { path: 'settings', component: SettingsComponent },
 
+  { path: 'calendar', component: CalendarComponent },
   { path: 'scheduler', component: SchedulerComponent },
+  { path: 'checklist', component: ChecklistComponent },
 
   { path: 'instructors', component: InstructorsComponent, children: [
     { path: '', component: InstListComponent },
     { path: ':id', component: InstDetailComponent }
   ]},
+  { path: 'courses', component: CoursesComponent },
+  { path: 'facilitiesmaterials', component: FacilitiesMaterialsComponent },
+  { path: 'trainingassets', component: TrainingAssetsComponent },
 
   { path: 'aar', component: AarComponent },
   { path: 'sitrep', component: SitrepComponent },
@@ -43,6 +56,10 @@ const routes: Routes = [
   { path: 'coursehist', component: CourseHistoryComponent },
   { path: 'surveys', component: SurveysComponent },
   { path: 'trainingfaqs', component: TrainingFaqsComponent },
+
+  { path: 'cdrl', component: CdrlComponent },
+  { path: 'aql', component: AqlMetricsComponent },
+  { path: 'constantview', component: ConstantviewComponent },
 
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' }
