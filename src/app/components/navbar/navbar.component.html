@@ -10,17 +10,25 @@
 
   <!-- Middle Header Container -->
   <div id="head-links">
-    <div class="big-btn-wrapper" routerLink="/currentops">
-      <button mat-button>Current Operations</button>
+    <div class="big-btn-wrapper" routerLink="/currentops" fxFlex.xs="grow" fxFlex.gt-md="initial">
+      <button mat-button class="navbtnsm" fxShow.xs [fxHide.gt-sm]="true">Current Operations</button>
+      <button mat-button class="navbtnmd" fxHide [fxShow.gt-sm]="true" [fxHide.gt-md]="true">Current Operations</button>
+      <button mat-button class="navbtnlg" fxHide [fxShow.gt-md]="true">Current Operations</button>
     </div>
-    <div class="big-btn-wrapper" routerLink="/readiness">
-      <button mat-button>Training Readiness</button>
+    <div class="big-btn-wrapper" routerLink="/readiness" fxFlex.xs="grow" fxFlex.gt-md="initial">
+      <button mat-button class="navbtnsm" fxShow.xs [fxHide.gt-sm]="true">Training Readiness</button>
+      <button mat-button class="navbtnmd" fxHide [fxShow.gt-sm]="true" [fxHide.gt-md]="true">Training Readiness</button>
+      <button mat-button class="navbtnlg" fxHide [fxShow.gt-md]="true">Training Readiness</button>
     </div>
-    <div class="big-btn-wrapper" routerLink="/knowmgmt">
-      <button mat-button>Knowledge Management</button>
+    <div class="big-btn-wrapper" routerLink="/knowmgmt" fxFlex.xs="grow" fxFlex.gt-md="initial">
+      <button mat-button class="navbtnsm" fxShow.xs [fxHide.gt-sm]="true">Knowledge Management</button>
+      <button mat-button class="navbtnmd" fxHide [fxShow.gt-sm]="true" [fxHide.gt-md]="true">Knowledge Management</button>
+      <button mat-button class="navbtnlg" fxHide [fxShow.gt-md]="true">Knowledge Management</button>
     </div>
-    <div class="big-btn-wrapper" routerLink="/programdata">
-      <button mat-button>Program Data</button>
+    <div class="big-btn-wrapper" routerLink="/programdata" fxFlex.xs="grow" fxFlex.gt-md="initial">
+      <button mat-button class="navbtnsm" fxShow.xs [fxHide.gt-sm]="true">Program Data</button>
+      <button mat-button class="navbtnmd" fxHide [fxShow.gt-sm]="true" [fxHide.gt-md]="true">Program Data</button>
+      <button mat-button class="navbtnlg" fxHide [fxShow.gt-md]="true">Program Data</button>
     </div>
   </div>
 
