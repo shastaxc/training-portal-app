@@ -22,6 +22,7 @@ import { InstDetailComponent } from './pages/force-modernization/instructors/ins
 import { CoursesComponent } from './pages/force-modernization/courses/courses.component';
 import { FacilitiesMaterialsComponent } from './pages/force-modernization/facilities-materials/facilities-materials.component';
 import { TrainingAssetsComponent } from './pages/force-modernization/training-assets/training-assets.component';
+import { DevTrackerComponent } from './pages/force-modernization/dev-tracker/dev-tracker.component';
 
 import { KnowMgmtComponent } from './pages/know-mgmt/know-mgmt.component';
 import { AarComponent } from './pages/know-mgmt/aar/aar.component';
@@ -31,6 +32,8 @@ import { FieldObservationsComponent } from './pages/know-mgmt/field-observations
 import { CourseHistoryComponent } from './pages/know-mgmt/course-history/course-history.component';
 import { SurveysComponent } from './pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from './pages/know-mgmt/training-faqs/training-faqs.component';
+import { TotalPkgFieldDocComponent } from './pages/know-mgmt/total-pkg-field-doc/total-pkg-field-doc.component';
+import { PoiListComponent } from './pages/know-mgmt/poi-list/poi-list.component';
 
 import { ProgramDataComponent } from './pages/program-data/program-data.component';
 import { CdrlComponent } from './pages/program-data/cdrl/cdrl.component';
@@ -74,7 +77,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     CdrlComponent,
     AqlMetricsComponent,
     ConstantviewComponent,
-    TrainingReqComponent
+    TrainingReqComponent,
+    TotalPkgFieldDocComponent,
+    DevTrackerComponent,
+    PoiListComponent
   ],
   imports: [
     BrowserModule,

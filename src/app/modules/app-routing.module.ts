@@ -1,12 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WorldmapComponent } from '../components/worldmap/worldmap.component';
-import { CurrentOpsComponent } from '../pages/current-ops/current-ops.component';
-import { ForceModernizationComponent } from '../pages/force-modernization/force-modernization.component';
-import { KnowMgmtComponent } from '../pages/know-mgmt/know-mgmt.component';
-import { ProgramDataComponent } from '../pages/program-data/program-data.component';
 import { AccountComponent } from '../pages/account/account.component';
 import { SettingsComponent } from '../pages/settings/settings.component';
+import { NotFoundComponent } from '../pages/not-found/not-found.component';
+
+import { CurrentOpsComponent } from '../pages/current-ops/current-ops.component';
+import { SchedulerComponent } from '../pages/current-ops/scheduler/scheduler.component';
+import { CalendarComponent } from '../pages/current-ops/calendar/calendar.component';
+import { ChecklistComponent } from '../pages/current-ops/checklist/checklist.component';
+
+import { ForceModernizationComponent } from '../pages/force-modernization/force-modernization.component';
+import { TrainingReqComponent } from '../pages/force-modernization/training-req/training-req.component';
+import { InstructorsComponent } from '../pages/force-modernization/instructors/instructors.component';
+import { InstDetailComponent } from '../pages/force-modernization/instructors/inst-detail/inst-detail.component';
+import { InstListComponent } from '../pages/force-modernization/instructors/inst-list/inst-list.component';
+import { CoursesComponent } from '../pages/force-modernization/courses/courses.component';
+import { FacilitiesMaterialsComponent } from '../pages/force-modernization/facilities-materials/facilities-materials.component';
+import { TrainingAssetsComponent } from '../pages/force-modernization/training-assets/training-assets.component';
+import { DevTrackerComponent } from '../pages/force-modernization/dev-tracker/dev-tracker.component';
+
+import { KnowMgmtComponent } from '../pages/know-mgmt/know-mgmt.component';
 import { AarComponent } from '../pages/know-mgmt/aar/aar.component';
 import { SitrepComponent } from '../pages/know-mgmt/sitrep/sitrep.component';
 import { LessonsLearnedComponent } from '../pages/know-mgmt/lessons-learned/lessons-learned.component';
@@ -14,17 +28,10 @@ import { FieldObservationsComponent } from '../pages/know-mgmt/field-observation
 import { CourseHistoryComponent } from '../pages/know-mgmt/course-history/course-history.component';
 import { SurveysComponent } from '../pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from '../pages/know-mgmt/training-faqs/training-faqs.component';
-import { SchedulerComponent } from '../pages/current-ops/scheduler/scheduler.component';
-import { NotFoundComponent } from '../pages/not-found/not-found.component';
-import { TrainingReqComponent } from '../pages/force-modernization/training-req/training-req.component';
-import { InstructorsComponent } from '../pages/force-modernization/instructors/instructors.component';
-import { InstDetailComponent } from '../pages/force-modernization/instructors/inst-detail/inst-detail.component';
-import { InstListComponent } from '../pages/force-modernization/instructors/inst-list/inst-list.component';
-import { CalendarComponent } from '../pages/current-ops/calendar/calendar.component';
-import { ChecklistComponent } from '../pages/current-ops/checklist/checklist.component';
-import { CoursesComponent } from '../pages/force-modernization/courses/courses.component';
-import { FacilitiesMaterialsComponent } from '../pages/force-modernization/facilities-materials/facilities-materials.component';
-import { TrainingAssetsComponent } from '../pages/force-modernization/training-assets/training-assets.component';
+import { TotalPkgFieldDocComponent } from '../pages/know-mgmt/total-pkg-field-doc/total-pkg-field-doc.component';
+import { PoiListComponent } from '../pages/know-mgmt/poi-list/poi-list.component';
+
+import { ProgramDataComponent } from '../pages/program-data/program-data.component';
 import { CdrlComponent } from '../pages/program-data/cdrl/cdrl.component';
 import { AqlMetricsComponent } from '../pages/program-data/aql-metrics/aql-metrics.component';
 import { ConstantviewComponent } from '../pages/program-data/constantview/constantview.component';
@@ -50,6 +57,7 @@ const routes: Routes = [
   { path: 'courses', component: CoursesComponent },
   { path: 'facilitiesmaterials', component: FacilitiesMaterialsComponent },
   { path: 'trainingassets', component: TrainingAssetsComponent },
+  { path: 'devtracker', component: DevTrackerComponent },
 
   { path: 'aar', component: AarComponent },
   { path: 'sitrep', component: SitrepComponent },
@@ -58,6 +66,8 @@ const routes: Routes = [
   { path: 'coursehist', component: CourseHistoryComponent },
   { path: 'surveys', component: SurveysComponent },
   { path: 'trainingfaqs', component: TrainingFaqsComponent },
+  { path: 'totalpkgfielddoc', component: TotalPkgFieldDocComponent },
+  { path: 'poilist', component: PoiListComponent },
 
   { path: 'cdrl', component: CdrlComponent },
   { path: 'aql', component: AqlMetricsComponent },
