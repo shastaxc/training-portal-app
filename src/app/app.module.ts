@@ -14,13 +14,14 @@ import { CalendarComponent } from './pages/current-ops/calendar/calendar.compone
 import { SchedulerComponent } from './pages/current-ops/scheduler/scheduler.component';
 import { ChecklistComponent } from './pages/current-ops/checklist/checklist.component';
 
-import { TrainingReadinessComponent } from './pages/training-readiness/training-readiness.component';
-import { InstructorsComponent } from './pages/training-readiness/instructors/instructors.component';
-import { InstListComponent } from './pages/training-readiness/instructors/inst-list/inst-list.component';
-import { InstDetailComponent } from './pages/training-readiness/instructors/inst-detail/inst-detail.component';
-import { CoursesComponent } from './pages/training-readiness/courses/courses.component';
-import { FacilitiesMaterialsComponent } from './pages/training-readiness/facilities-materials/facilities-materials.component';
-import { TrainingAssetsComponent } from './pages/training-readiness/training-assets/training-assets.component';
+import { ForceModernizationComponent } from './pages/force-modernization/force-modernization.component';
+import { TrainingReqComponent } from './pages/force-modernization/training-req/training-req.component';
+import { InstructorsComponent } from './pages/force-modernization/instructors/instructors.component';
+import { InstListComponent } from './pages/force-modernization/instructors/inst-list/inst-list.component';
+import { InstDetailComponent } from './pages/force-modernization/instructors/inst-detail/inst-detail.component';
+import { CoursesComponent } from './pages/force-modernization/courses/courses.component';
+import { FacilitiesMaterialsComponent } from './pages/force-modernization/facilities-materials/facilities-materials.component';
+import { TrainingAssetsComponent } from './pages/force-modernization/training-assets/training-assets.component';
 
 import { KnowMgmtComponent } from './pages/know-mgmt/know-mgmt.component';
 import { AarComponent } from './pages/know-mgmt/aar/aar.component';
@@ -47,7 +48,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NavbarComponent,
     FooterComponent,
     CurrentOpsComponent,
-    TrainingReadinessComponent,
+    ForceModernizationComponent,
     KnowMgmtComponent,
     ProgramDataComponent,
     WorldmapComponent,
@@ -72,7 +73,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     TrainingAssetsComponent,
     CdrlComponent,
     AqlMetricsComponent,
-    ConstantviewComponent
+    ConstantviewComponent,
+    TrainingReqComponent
   ],
   imports: [
     BrowserModule,

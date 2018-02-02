@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WorldmapComponent } from '../components/worldmap/worldmap.component';
 import { CurrentOpsComponent } from '../pages/current-ops/current-ops.component';
-import { TrainingReadinessComponent } from '../pages/training-readiness/training-readiness.component';
+import { ForceModernizationComponent } from '../pages/force-modernization/force-modernization.component';
 import { KnowMgmtComponent } from '../pages/know-mgmt/know-mgmt.component';
 import { ProgramDataComponent } from '../pages/program-data/program-data.component';
 import { AccountComponent } from '../pages/account/account.component';
@@ -16,14 +16,15 @@ import { SurveysComponent } from '../pages/know-mgmt/surveys/surveys.component';
 import { TrainingFaqsComponent } from '../pages/know-mgmt/training-faqs/training-faqs.component';
 import { SchedulerComponent } from '../pages/current-ops/scheduler/scheduler.component';
 import { NotFoundComponent } from '../pages/not-found/not-found.component';
-import { InstructorsComponent } from '../pages/training-readiness/instructors/instructors.component';
-import { InstDetailComponent } from '../pages/training-readiness/instructors/inst-detail/inst-detail.component';
-import { InstListComponent } from '../pages/training-readiness/instructors/inst-list/inst-list.component';
+import { TrainingReqComponent } from '../pages/force-modernization/training-req/training-req.component';
+import { InstructorsComponent } from '../pages/force-modernization/instructors/instructors.component';
+import { InstDetailComponent } from '../pages/force-modernization/instructors/inst-detail/inst-detail.component';
+import { InstListComponent } from '../pages/force-modernization/instructors/inst-list/inst-list.component';
 import { CalendarComponent } from '../pages/current-ops/calendar/calendar.component';
 import { ChecklistComponent } from '../pages/current-ops/checklist/checklist.component';
-import { CoursesComponent } from '../pages/training-readiness/courses/courses.component';
-import { FacilitiesMaterialsComponent } from '../pages/training-readiness/facilities-materials/facilities-materials.component';
-import { TrainingAssetsComponent } from '../pages/training-readiness/training-assets/training-assets.component';
+import { CoursesComponent } from '../pages/force-modernization/courses/courses.component';
+import { FacilitiesMaterialsComponent } from '../pages/force-modernization/facilities-materials/facilities-materials.component';
+import { TrainingAssetsComponent } from '../pages/force-modernization/training-assets/training-assets.component';
 import { CdrlComponent } from '../pages/program-data/cdrl/cdrl.component';
 import { AqlMetricsComponent } from '../pages/program-data/aql-metrics/aql-metrics.component';
 import { ConstantviewComponent } from '../pages/program-data/constantview/constantview.component';
@@ -31,7 +32,7 @@ import { ConstantviewComponent } from '../pages/program-data/constantview/consta
 const routes: Routes = [
   { path: '', component: WorldmapComponent, pathMatch: 'full' },
   { path: 'currentops', component: CurrentOpsComponent },
-  { path: 'readiness', component: TrainingReadinessComponent },
+  { path: 'forcemod', component: ForceModernizationComponent },
   { path: 'knowmgmt', component: KnowMgmtComponent },
   { path: 'programdata', component: ProgramDataComponent },
   { path: 'account', component: AccountComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
   { path: 'scheduler', component: SchedulerComponent },
   { path: 'checklist', component: ChecklistComponent },
 
+  { path: 'trainingreq', component: TrainingReqComponent },
   { path: 'instructors', component: InstructorsComponent, children: [
     { path: '', component: InstListComponent },
     { path: ':id', component: InstDetailComponent }
