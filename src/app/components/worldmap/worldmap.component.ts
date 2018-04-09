@@ -17,11 +17,11 @@ export class WorldmapComponent implements OnInit {
       this.bodyText = 'This text can be updated in modal 1';
   }
 
-  openModal(id: string){
+  openModal(id: string) {
       this.modalService.open(id);
   }
 
-  closeModal(id: string){
+  closeModal(id: string) {
       this.modalService.close(id);
   }
 }
