@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -45,8 +46,8 @@ import { AccountComponent } from './pages/account/account.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-import { ModalComponent } from './components/modal/modal.component';
-import { ModalService } from './services/modal.service';
+import { MatDialogModule } from '@angular/material';
+import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
 
 @NgModule({
   declarations: [
@@ -84,17 +85,22 @@ import { ModalService } from './services/modal.service';
     TotalPkgFieldDocComponent,
     DevTrackerComponent,
     PoiListComponent,
-    ModalComponent
+    MapDialogComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
-    ModalService
+
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    MapDialogComponent
+  ]
 })
 export class AppModule { }

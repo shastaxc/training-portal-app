@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { ModalService } from '../../services/modal.service';
+import { MatDialog } from '@angular/material';
+import { MapDialogComponent } from '../map-dialog/map-dialog.component';
 
 @Component({
   selector: 'app-worldmap',
@@ -10,18 +12,20 @@ import { ModalService } from '../../services/modal.service';
 export class WorldmapComponent implements OnInit {
   private bodyText: string;
 
-  constructor(private modalService: ModalService) {
+  constructor(private dialog: MatDialog) {
   }
 
   ngOnInit() {
-      this.bodyText = 'This text can be updated in modal 1';
+
   }
 
   openModal(id: string) {
-      this.modalService.open(id);
+      let dialogRef = this.dialog.open(MapDialogComponent, {
+        data: {filename: id}
+      });
   }
 
-  closeModal(id: string) {
+  /*closeModal(id: string) {
       this.modalService.close(id);
-  }
+  }*/
 }

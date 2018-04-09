@@ -4,7 +4,8 @@
 // -----------------------------------------------------------------------------
 @import
   '~@angular/material/theming',
-  '../abstracts/variables';
+  '../abstracts/variables',
+  '~@angular/material/prebuilt-themes/indigo-pink.css';
 @include mat-core();
 
 $primary-color:$light-tan;
