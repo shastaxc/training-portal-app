@@ -45,6 +45,9 @@ import { AccountComponent } from './pages/account/account.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalService } from './services/modal.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +83,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     TrainingReqComponent,
     TotalPkgFieldDocComponent,
     DevTrackerComponent,
-    PoiListComponent
+    PoiListComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +92,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    ModalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

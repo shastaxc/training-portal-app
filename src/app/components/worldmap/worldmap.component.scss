@@ -1,9 +1,240 @@
+/*
+//old implementation
 :host{
-  background-image:url('../../../assets/images/world-atlas-filled.png');
+  //background-image:url('../../../assets/images/world-atlas-filled.png');
+  background-image:url('../../../assets/images/worldmap1.png');
   background-size:contain;
   background-repeat:no-repeat;
   background-position:center;
   width:85%;
   flex-grow:1;
   margin:auto;
+}
+*/
+:host{
+  width:85%;
+  flex-grow:0;
+  margin:auto;
+}
+
+#svg2985{
+  max-width:100%;
+  height:auto;
+}
+
+/*
+ * Below are Cascading Style Sheet (CSS) definitions in use in this file,
+ * which allow easily changing how countries are displayed.
+ *
+ */
+
+/*
+ * Circles around small countries
+ *
+ * Change opacity to 1 to display all circles.
+ *
+ */
+.circlexx
+{
+   opacity:0;
+   fill:#e0e0e0;
+   stroke:#000000;
+   stroke-width:0.5;
+}
+
+/*
+ * Smaller circles around French DOMs and Chinese SARs
+ *
+ * Change opacity to 1 to display all subnational circles.
+ *
+ */
+.subxx
+{
+   opacity:0;
+   stroke-width:0.3;
+}
+
+
+/*
+ * Circles around small countries, but with no permanent residents
+ *
+ * Change opacity to 1 to display all circles.
+ *
+ */
+.noxx
+{
+   opacity:0;
+   fill:#e0e0e0;
+   stroke:#000000;
+   stroke-width:0.5;
+}
+
+/*
+ * land
+ */
+.landxx
+{
+   fill: #101010;
+   stroke:#ffffff;
+   stroke-width:0.5;
+   fill-rule:evenodd;
+}
+
+/*
+ * Styles for coastlines of islands with no borders
+ */
+.coastxx
+{
+   fill: #101010;
+   stroke:#ffffff;
+   stroke-width:0.3;
+   fill-rule:evenodd;
+}
+
+
+/*
+ * Styles for territories with limited or no recognition
+ */
+.limitxx
+{
+   fill: #101010;
+   stroke:#ffffff;
+   stroke-width:0;
+   fill-rule:evenodd;
+}
+
+/*
+ * Circles around small territories with limited or no recognition
+ *
+ * Change opacity to 1 to display all circles.
+ *
+ */
+.unxx
+{
+   opacity:0;
+   fill:#e0e0e0;
+   stroke:#000000;
+   stroke-width:0.3;
+}
+
+
+/*
+ * Styles for territories without permanent population.
+ */
+.antxx
+{
+   fill: #101010;
+   stroke:#ffffff;
+   stroke-width:0;
+   fill-rule:evenodd;
+}
+
+/*
+ * Oceans and seas
+ */
+.oceanxx
+{
+   opacity: 1;
+   color: #000000;
+   fill:#101010;
+   stroke:#000;
+   stroke-width:0.5;
+   stroke-miterlimit:1;
+}
+
+/*
+
+ Reserved class names:
+
+ .eu - for members of European Union
+ .eaeu - for members of Euroasian Economical Union
+
+*/
+
+
+
+/*
+ * Additional style rules
+ *
+ * The following are examples of colouring countries.  You can substitute these with your own styles to colour the countries on the map.
+ *
+ * Color a few countries:
+ *
+ * .gb, .au, .nc
+ * {
+ *    fill:       #ff0000;
+ * }
+ *
+ * Color a few small country circles (and the countries):
+ *
+ * .ms, .ky
+ * {
+ *    opacity:    1;
+ *    fill:       #ff0000;
+ * }
+ *
+ */
+
+// Active countries
+// United States, Puerto Rico, Honduras, Kuwait, Afghanistan,
+// Germany, Italy, Netherlands, Belgium, Qatar,
+// South Korea, Japan, Senegal, Liberia, Ghana, Gabon,
+// South Sudan, Uganda, Central Afrian Republic,
+// Democratic Republic of the Congo
+.us,.pr,.hn,.kw-,.af,
+.de,.it,.nl,.be,.qa,
+.kr,.jp,.sn,.lr,.gh,.ga,
+.ss,.ug,.cf,
+.cd
+{
+  fill: #03cbd7;
+  stroke: #095458;
+}
+
+.clickable{
+  cursor:pointer;
+}
+
+/* MODAL STYLES
+-------------------------------*/
+modal {
+  /* modals are hidden by default */
+  display: none;
+  .modal {
+      /* modal container fixed across whole screen */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /* z-index must be higher than .modal-background */
+      z-index: 1000;
+
+      /* enables scrolling for tall modals */
+      overflow: auto;
+      .modal-body {
+          padding: 20px;
+          background: #fff;
+          /* margin exposes part of the modal background */
+          margin: 40px;
+      }
+  }
+  .modal-background {
+      /* modal background fixed across whole screen */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /* semi-transparent black  */
+      background-color: #000;
+      opacity: 0.75;
+
+      /* z-index must be below .modal and above everything else  */
+      z-index: 900;
+  }
+}
+body.modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
 }
