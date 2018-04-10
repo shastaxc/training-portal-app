@@ -17,9 +17,29 @@
   margin:auto;
 }
 
+#logo-container{
+  position:absolute;
+  margin:auto;
+  width:85%;
+  height:auto;
+  z-index:1;
+  pointer-events:none;
+}
+
+#img-tsd{
+  width:10%;
+  float:left;
+}
+
+#img-mantech{
+  width:15%;
+  float:right;
+}
+
 #svg2985{
   max-width:100%;
   height:auto;
+  z-index:2;
 }
 
 /*
