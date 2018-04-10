@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalComponent } from '../modal/modal.component';
-import { ModalService } from '../../services/modal.service';
 import { MatDialog } from '@angular/material';
 import { MapDialogComponent } from '../map-dialog/map-dialog.component';
 
@@ -24,8 +22,4 @@ export class WorldmapComponent implements OnInit {
         data: {filename: id}
       });
   }
-
-  /*closeModal(id: string) {
-      this.modalService.close(id);
-  }*/
 }
