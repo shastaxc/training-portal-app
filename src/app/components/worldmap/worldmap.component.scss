@@ -201,17 +201,12 @@
 // South Korea, Japan, Senegal, Liberia, Ghana, Gabon,
 // South Sudan, Uganda, Central Afrian Republic,
 // Democratic Republic of the Congo
-.us,.pr,.hn,.kw,.af,
+.us,.us-other,.hn,.kw,.af,
 .de,.it,.nl,.be,.qa,
 .kr,.jp,.sn,.lr,.gh,.ga,
 .ss,.ug,.cf,
 .cd
 {
-  fill: #03cbd7;
-  stroke: #095458;
-}
-
-.us-other{
   fill: #03cbd7;
   stroke: #095458;
 }
