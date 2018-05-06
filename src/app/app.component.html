@@ -3,12 +3,13 @@
 
     <!-- Header Frame -->
     <div id="header-frame">
-      <app-navbar></app-navbar>
+      <app-navbar *ngIf="auth.isLoggedin()"></app-navbar>
     </div>
 
     <!-- Content Frame -->
     <div id="content-frame">
-      <router-outlet></router-outlet>
+      <app-login-menu *ngIf="!auth.isLoggedin()"></app-login-menu>
+      <router-outlet *ngIf="auth.isLoggedin()"></router-outlet>
     </div>
 
     <!-- Footer Frame -->

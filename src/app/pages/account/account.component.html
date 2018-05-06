@@ -1,4 +1,6 @@
 <mat-card>
   <mat-card-title>{{title}}</mat-card-title>
-  <mat-card-content>{{title}} info goes here</mat-card-content>
+  <mat-card-content>
+    <button (click)="auth.logout()">Logout</button>
+  </mat-card-content>
 </mat-card>

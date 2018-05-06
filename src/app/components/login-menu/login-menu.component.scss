@@ -1,0 +1,51 @@
+@import
+  '../../../sass/themes/default';
+
+:host{
+  align-self:center;
+  margin:auto;
+  width:100%;
+  height:100%;
+}
+
+.login-container{
+	width: 100%;
+  height:400px;
+  padding: 0% !important;
+	background-color: #fff;
+	-webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	-moz-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+	box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
+}
+
+.login-box-header{
+	width: auto;
+    height: 20%;
+    background-color: $secondary-color;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 3em;
+    padding: 2%;
+}
+
+.login-box-body{
+	width: auto;
+	height:100%;
+	padding: 5% 5% 5% 5%;
+}
+
+.login-icon{
+	margin-top: -2px;
+}
+
+.justifier {
+	width: 100%;
+	padding-bottom: 2%;
+}
+
+.login-button{
+	width: 100%;
+	padding:1.5% !important;
+  background-color: $secondary-color;
+  font-size: 1.5em;
+}

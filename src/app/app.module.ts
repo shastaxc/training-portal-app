@@ -48,6 +48,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { MatDialogModule } from '@angular/material';
 import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
+import { LoginMenuComponent } from './components/login-menu/login-menu.component';
+
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -85,7 +88,8 @@ import { MapDialogComponent } from './components/map-dialog/map-dialog.component
     TotalPkgFieldDocComponent,
     DevTrackerComponent,
     PoiListComponent,
-    MapDialogComponent
+    MapDialogComponent,
+    LoginMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +100,7 @@ import { MapDialogComponent } from './components/map-dialog/map-dialog.component
     BrowserAnimationsModule
   ],
   providers: [
-
+    AuthService
   ],
   bootstrap: [AppComponent],
   entryComponents: [
