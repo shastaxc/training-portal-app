@@ -3,8 +3,12 @@
   <mat-card-content>
     <ul>
         <li><a routerLink="/calendar">Training Calendar</a></li>
-        <li><a routerLink="/scheduler">Course Scheduler</a></li>
-        <li><a routerLink="/checklist">Checklist</a></li>
+        <ul>
+          <li><a routerLink="/scheduler">Planned</a></li>
+          <li><a routerLink="/scheduler">Current</a></li>
+          <li><a routerLink="/scheduler">Completed</a></li>
+        </ul>
+        <!-- Remove /checklist -->
       </ul>
   </mat-card-content>
 </mat-card>

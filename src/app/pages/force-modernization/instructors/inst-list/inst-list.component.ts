@@ -8,7 +8,7 @@ import * as data from '../../../../../assets/docs/instructors.json';
 })
 export class InstListComponent implements OnInit {
 
-  title = 'Instructor List';
+  title = 'Instructor Skills Matrix';
   instructors = <any>data;
 
   constructor() { }
