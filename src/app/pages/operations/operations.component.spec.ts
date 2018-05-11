@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PoiListComponent } from './poi-list.component';
+import { OperationsComponent } from './operations.component';
 
-describe('PoiListComponent', () => {
-  let component: PoiListComponent;
-  let fixture: ComponentFixture<PoiListComponent>;
+describe('OperationsComponent', () => {
+  let component: OperationsComponent;
+  let fixture: ComponentFixture<OperationsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PoiListComponent ]
+      declarations: [ OperationsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PoiListComponent);
+    fixture = TestBed.createComponent(OperationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

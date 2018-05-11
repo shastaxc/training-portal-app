@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SchedulerComponent implements OnInit {
 
-  title = 'Course Scheduler';
+  title = 'Scheduler';
 
   constructor() { }
 

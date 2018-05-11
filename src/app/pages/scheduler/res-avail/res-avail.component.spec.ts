@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TotalPkgFieldDocComponent } from './total-pkg-field-doc.component';
+import { ResAvailComponent } from './res-avail.component';
 
-describe('TotalPkgFieldDocComponent', () => {
-  let component: TotalPkgFieldDocComponent;
-  let fixture: ComponentFixture<TotalPkgFieldDocComponent>;
+describe('ResAvailComponent', () => {
+  let component: ResAvailComponent;
+  let fixture: ComponentFixture<ResAvailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TotalPkgFieldDocComponent ]
+      declarations: [ ResAvailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TotalPkgFieldDocComponent);
+    fixture = TestBed.createComponent(ResAvailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
