@@ -7,6 +7,7 @@ import { NotFoundComponent } from '../pages/not-found/not-found.component';
 
 import { OperationsComponent } from '../pages/operations/operations.component';
 import { CalendarComponent } from '../pages/operations/calendar/calendar.component';
+import { PlanningComponent } from '../pages/operations/planning/planning.component';
 
 import { SchedulerComponent } from '../pages/scheduler/scheduler.component';
 import { ResAvailComponent } from '../pages/scheduler/res-avail/res-avail.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'settings', component: SettingsComponent },
 
   { path: 'calendar', component: CalendarComponent },
+  { path: 'planning', component: PlanningComponent },
 
   { path: 'resavail', component: ResAvailComponent },
   { path: 'facilitiesmaterials', component: FacilitiesMaterialsComponent },

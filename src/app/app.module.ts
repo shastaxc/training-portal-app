@@ -2,16 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule,
+  ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material';
+
+import { AppRoutingModule } from './modules/app-routing.module';
+import { MaterialModule } from './modules/material.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { AppRoutingModule } from './modules/app-routing.module';
-import { MaterialModule } from './modules/material.module';
-
 import { OperationsComponent } from './pages/operations/operations.component';
 import { CalendarComponent } from './pages/operations/calendar/calendar.component';
+import { PlanningComponent } from './pages/operations/planning/planning.component';
 
 import { SchedulerComponent } from './pages/scheduler/scheduler.component';
 import { ResAvailComponent } from './pages/scheduler/res-avail/res-avail.component';
@@ -21,6 +25,7 @@ import { InstructorsComponent } from './pages/scheduler/instructors/instructors.
 import { InstListComponent } from './pages/scheduler/instructors/inst-list/inst-list.component';
 import { InstDetailComponent } from './pages/scheduler/instructors/inst-detail/inst-detail.component';
 import { CoursesComponent } from './pages/scheduler/courses/courses.component';
+import { MissionChecklistComponent } from './pages/scheduler/mission-checklist/mission-checklist.component';
 
 import { KnowMgmtComponent } from './pages/know-mgmt/know-mgmt.component';
 import { AarComponent } from './pages/know-mgmt/aar/aar.component';
@@ -41,12 +46,11 @@ import { AccountComponent } from './pages/account/account.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-import { MatDialogModule } from '@angular/material';
 import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
 import { LoginMenuComponent } from './components/login-menu/login-menu.component';
+import { PlanningSelectComponent } from './components/planning-select/planning-select.component';
 
 import { AuthService } from './services/auth.service';
-import { MissionChecklistComponent } from './pages/scheduler/mission-checklist/mission-checklist.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,9 @@ import { MissionChecklistComponent } from './pages/scheduler/mission-checklist/m
     TrainingReqComponent,
     MapDialogComponent,
     LoginMenuComponent,
-    MissionChecklistComponent
+    MissionChecklistComponent,
+    PlanningComponent,
+    PlanningSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +95,9 @@ import { MissionChecklistComponent } from './pages/scheduler/mission-checklist/m
     AppRoutingModule,
     MaterialModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService
