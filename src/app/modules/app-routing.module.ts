@@ -9,15 +9,15 @@ import { OperationsComponent } from '../pages/operations/operations.component';
 import { CalendarComponent } from '../pages/operations/calendar/calendar.component';
 import { PlanningComponent } from '../pages/operations/planning/planning.component';
 
-import { SchedulerComponent } from '../pages/scheduler/scheduler.component';
-import { ResAvailComponent } from '../pages/scheduler/res-avail/res-avail.component';
-import { FacilitiesMaterialsComponent } from '../pages/scheduler/res-avail/facilities-materials/facilities-materials.component';
-import { TrainingReqComponent } from '../pages/scheduler/training-req/training-req.component';
-import { InstructorsComponent } from '../pages/scheduler/instructors/instructors.component';
-import { InstDetailComponent } from '../pages/scheduler/instructors/inst-detail/inst-detail.component';
-import { InstListComponent } from '../pages/scheduler/instructors/inst-list/inst-list.component';
-import { CoursesComponent } from '../pages/scheduler/courses/courses.component';
-import { MissionChecklistComponent } from '../pages/scheduler/mission-checklist/mission-checklist.component';
+import { ResourcesComponent } from '../pages/resources/resources.component';
+import { ResAvailComponent } from '../pages/resources/res-avail/res-avail.component';
+import { FacilitiesMaterialsComponent } from '../pages/resources/res-avail/facilities-materials/facilities-materials.component';
+import { TrainingReqComponent } from '../pages/resources/training-req/training-req.component';
+import { InstructorsComponent } from '../pages/resources/instructors/instructors.component';
+import { InstDetailComponent } from '../pages/resources/instructors/inst-detail/inst-detail.component';
+import { InstListComponent } from '../pages/resources/instructors/inst-list/inst-list.component';
+import { CoursesComponent } from '../pages/resources/courses/courses.component';
+import { MissionChecklistComponent } from '../pages/resources/mission-checklist/mission-checklist.component';
 
 import { KnowMgmtComponent } from '../pages/know-mgmt/know-mgmt.component';
 import { AarComponent } from '../pages/know-mgmt/aar/aar.component';
@@ -36,7 +36,7 @@ import { ConstantviewComponent } from '../pages/contractmgmt/constantview/consta
 const routes: Routes = [
   { path: '', component: WorldmapComponent, pathMatch: 'full' },
   { path: 'operations', component: OperationsComponent },
-  { path: 'scheduler', component: SchedulerComponent },
+  { path: 'resources', component: ResourcesComponent },
   { path: 'knowmgmt', component: KnowMgmtComponent },
   { path: 'contractmgmt', component: ContractMgmtComponent },
   { path: 'account', component: AccountComponent },
