@@ -18,8 +18,6 @@ import { CalendarComponent } from './pages/operations/calendar/calendar.componen
 import { PlanningComponent } from './pages/operations/planning/planning.component';
 
 import { ResourcesComponent } from './pages/resources/resources.component';
-import { ResAvailComponent } from './pages/resources/res-avail/res-avail.component';
-import { FacilitiesMaterialsComponent } from './pages/resources/res-avail/facilities-materials/facilities-materials.component';
 import { TrainingReqComponent } from './pages/resources/training-req/training-req.component';
 import { InstructorsComponent } from './pages/resources/instructors/instructors.component';
 import { InstListComponent } from './pages/resources/instructors/inst-list/inst-list.component';
@@ -69,8 +67,6 @@ import { AuthService } from './services/auth.service';
     FieldObservationsComponent,
     CourseHistoryComponent,
     SurveysComponent,
-    ResAvailComponent,
-    FacilitiesMaterialsComponent,
     TrainingFaqsComponent,
     ResourcesComponent,
     NotFoundComponent,
