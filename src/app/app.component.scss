@@ -17,6 +17,11 @@
   border-bottom-style:solid;
 }
 
+.blank-header-frame{
+  height:52px;
+  display:block;
+}
+
 #content-frame{
   display:flex;
   flex-direction:column;

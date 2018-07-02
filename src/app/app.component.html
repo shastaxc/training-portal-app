@@ -2,9 +2,10 @@
 <div id="pg-container">
 
     <!-- Header Frame -->
-    <div id="header-frame">
-      <app-navbar *ngIf="auth.isLoggedin()"></app-navbar>
+    <div id="header-frame" *ngIf="auth.isLoggedin()">
+      <app-navbar></app-navbar>
     </div>
+    <div class="blank-header-frame" *ngIf="!auth.isLoggedin()"></div>
 
     <!-- Content Frame -->
     <div id="content-frame">
