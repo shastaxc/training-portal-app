@@ -1,20 +1,19 @@
 <!-- Page Container -->
 <div id="pg-container">
 
-    <!-- Header Frame -->
-    <div id="header-frame" *ngIf="auth.isLoggedin()">
-      <app-navbar></app-navbar>
-    </div>
-    <div class="blank-header-frame" *ngIf="!auth.isLoggedin()"></div>
-
-    <!-- Content Frame -->
-    <div id="content-frame">
-      <app-login-menu *ngIf="!auth.isLoggedin()"></app-login-menu>
-      <router-outlet *ngIf="auth.isLoggedin()"></router-outlet>
-    </div>
-
-    <!-- Footer Frame -->
-    <div id="footer-frame">
-      <app-footer></app-footer>
-    </div>
+  <!-- Header Frame -->
+  <div id="header-frame" *ngIf="auth.isLoggedin()">
+    <app-navbar></app-navbar>
   </div>
+
+  <!-- Content Frame -->
+  <div id="content-frame">
+    <app-login-menu *ngIf="!auth.isLoggedin()"></app-login-menu>
+    <router-outlet *ngIf="auth.isLoggedin()"></router-outlet>
+  </div>
+
+  <!-- Footer Frame -->
+  <div id="footer-frame">
+    <app-footer></app-footer>
+  </div>
+</div>

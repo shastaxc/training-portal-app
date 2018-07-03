@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UsmapComponent } from '../components/usmap/usmap.component';
 import { WorldmapComponent } from '../components/worldmap/worldmap.component';
 import { AccountComponent } from '../pages/account/account.component';
 import { SettingsComponent } from '../pages/settings/settings.component';
@@ -32,7 +33,7 @@ import { AqlMetricsComponent } from '../pages/contractmgmt/aql-metrics/aql-metri
 import { ConstantviewComponent } from '../pages/contractmgmt/constantview/constantview.component';
 
 const routes: Routes = [
-  { path: '', component: WorldmapComponent, pathMatch: 'full' },
+  { path: '', component: UsmapComponent, pathMatch: 'full' },
   { path: 'operations', component: OperationsComponent },
   { path: 'resources', component: ResourcesComponent },
   { path: 'knowmgmt', component: KnowMgmtComponent },

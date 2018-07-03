@@ -39,6 +39,7 @@ import { CdrlComponent } from './pages/contractmgmt/cdrl/cdrl.component';
 import { AqlMetricsComponent } from './pages/contractmgmt/aql-metrics/aql-metrics.component';
 import { ConstantviewComponent } from './pages/contractmgmt/constantview/constantview.component';
 
+import { UsmapComponent } from './components/usmap/usmap.component';
 import { WorldmapComponent } from './components/worldmap/worldmap.component';
 import { AccountComponent } from './pages/account/account.component';
 import { SettingsComponent } from './pages/settings/settings.component';
@@ -83,7 +84,8 @@ import { AuthService } from './services/auth.service';
     LoginMenuComponent,
     MissionChecklistComponent,
     PlanningComponent,
-    PlanningSelectComponent
+    PlanningSelectComponent,
+    UsmapComponent
   ],
   imports: [
     BrowserModule,

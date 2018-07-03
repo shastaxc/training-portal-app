@@ -1,0 +1,129 @@
+@import
+  '../../../sass/themes/default';
+
+:host{
+  display:flex;
+  position:relative;
+  width:85%;
+  height:100%;
+  margin-left:auto;
+  margin-right:auto;
+  padding: 10px 0 10px 0;
+  background:rgba(104,92,62,0.7);
+}
+
+#logo-container{
+  position:absolute;
+  width:100%;
+  height:auto;
+  z-index:1;
+  pointer-events:none;
+}
+
+#img-tsd{
+  width:10%;
+  float:left;
+}
+
+#img-mantech{
+  width:15%;
+  float:right;
+}
+
+.us-map-container{
+  display:flex;
+  width:85%;
+  height:100%;
+  max-width:85%;
+  max-height:100%;
+  text-align:center;
+  margin:auto;
+  z-index:0;
+}
+
+#us-map{
+  width:100%;
+  max-width:100%;
+  max-height:100%;
+}
+
+.frames{
+  fill:none;
+  stroke: rgba(45h,38h,23h,1);
+  stroke-width:2;
+}
+
+%blankstate{
+  //fill: #7c7760;
+  fill:$primary-color;
+  opacity:0.2;
+  stroke: rgba(45h,38h,23h,0.5);
+}
+
+%highlightstate{
+  fill:$primary-color;
+  stroke: rgba(45h,38h,23h,1);
+  stroke-width:0.5;
+}
+
+// Non-continental states
+#AK { @extend %highlightstate; }    // Alaska
+#HI { @extend %highlightstate; }    // Hawaii
+
+// Continental states
+#AL { @extend %highlightstate; }    // Alabama
+#AR { @extend %blankstate; }        // Arkansas
+#AZ { @extend %highlightstate; }    // Arizona
+#CA { @extend %highlightstate; opacity:0.2; }    // California
+#CO { @extend %highlightstate; }    // Colorado
+#CT { @extend %blankstate; }        // Connecticut
+#DC { @extend %highlightstate; }    // District of Columbia
+#DE { @extend %blankstate; }        // Delaware
+#FL { @extend %highlightstate; }    // Florida
+#GA { @extend %highlightstate; }    // Georgia
+#IA { @extend %blankstate; }        // Iowa
+#ID { @extend %blankstate; }        // Idaho
+#IL { @extend %highlightstate; }    // Illinois
+#IN { @extend %blankstate; }        // Indiana
+#KS { @extend %highlightstate; }    // Kansas
+#KY { @extend %highlightstate; }    // Kentucky
+#LA { @extend %highlightstate; }    // Louisiana
+#MA { @extend %highlightstate; }    // Massachusetts
+#MD { @extend %highlightstate; }    // Maryland
+#ME { @extend %blankstate; }        // Maine
+#MI { @extend %highlightstate; }    // Michigan
+#MN { @extend %blankstate; }        // Minnesota
+#MO { @extend %highlightstate; }    // Missouri
+#MS { @extend %blankstate; }        // Mississippi
+#MT { @extend %blankstate; }        // Montana
+#NC { @extend %highlightstate; }    // North Carolina
+#ND { @extend %blankstate; }        // North Dakota
+#NE { @extend %blankstate; }        // Nebraska
+#NH { @extend %blankstate; }        // New Hampshire
+#NJ { @extend %highlightstate; }    // New Jersey
+#NM { @extend %highlightstate; }    // New Mexico
+#NV { @extend %blankstate; }        // Nevada
+#NY { @extend %highlightstate; }    // New York
+#OH { @extend %blankstate; }        // Ohio
+#OK { @extend %blankstate; }        // Oklahoma
+#OR { @extend %blankstate; }        // Oregon
+#PA { @extend %highlightstate; }    // Pennsylvania
+#RI { @extend %blankstate; }        // Rhode Island
+#SC { @extend %highlightstate; }    // South Carolina
+#SD { @extend %blankstate; }        // South Dakota
+#TN { @extend %highlightstate; }    // Tennessee
+#TX { @extend %highlightstate; }    // Texas
+#UT { @extend %highlightstate; }    // Utah
+#VA { @extend %highlightstate; }    // Virginia
+#VT { @extend %blankstate; }        // Vermont
+#WA { @extend %highlightstate; }    // Washington
+#WI { @extend %highlightstate; }    // Wisconsin
+#WV { @extend %blankstate; }        // West Virginia
+#WY { @extend %highlightstate; }    // Wyoming
+
+// Territories
+#AS { @extend %blankstate; }        // American Samoa
+#GU { @extend %blankstate; }        // Guam
+#MP { @extend %blankstate; }        // Northern Mariana Islands
+#PR { @extend %highlightstate; }    // Puerto Rico
+#VI { @extend %blankstate; }        // U.S. Virgin Islands

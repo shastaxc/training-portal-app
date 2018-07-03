@@ -1,6 +1,15 @@
 @import
   '../../../sass/themes/default';
 
+#navbar{
+  display:flex;
+  flex-direction:row;
+  height:$header-height;
+  background:$secondary-color;
+  overflow:hidden;
+  padding:0;
+}
+
 .circular{
   border-radius:50%;
 }
@@ -12,14 +21,6 @@
   align-items:center;
   padding:0px 1px;
   margin: 0px 2px;
-}
-
-#navbar{
-  display:flex;
-  flex-direction:row;
-  background:$secondary-color;
-  overflow:hidden;
-  padding:0;
 }
 
 #navbar button{

@@ -1,50 +1,47 @@
-<div class="login-page-container">
+<div id="logo-container">
+  <img id="img-tsd" src="assets/images/logo-tsd-large.png" />
+  <img id="img-mantech" src="assets/images/logo-mantech-only.png" />
+</div>
 
-  <div id="logo-container">
-    <img id="img-tsd" src="assets/images/logo-tsd-large.png" />
-    <img id="img-mantech" src="assets/images/logo-mantech-only.png" />
+<div class="login-container">
+  <!-- Template Header starts -->
+  <div class="login-box-header">
+      Welcome&nbsp;to&nbsp;the Training&nbsp;Readiness Dashboard
   </div>
+  <!-- Template Header ends -->
 
-  <div class="login-container">
-    <!-- Template Header starts -->
-    <div class="login-box-header">
-        Welcome&nbsp;to&nbsp;the Training&nbsp;Readiness Dashboard
-    </div>
-    <!-- Template Header ends -->
+  <!-- Template Body starts -->
+  <div class="login-box-body">
 
-    <!-- Template Body starts -->
-    <div class="login-box-body">
+    <!-- Markup for getting Username starts -->
+    <mat-grid-list cols="9" rowHeight="75px">
+      <mat-grid-tile [rowspan]="1" class="login-icon">
+        <mat-icon>lock</mat-icon>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="7">
+        <mat-form-field class="justifier">
+          <input matInput placeholder="Username" text="text">
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!-- Markup for getting Username ends -->
 
-      <!-- Markup for getting Username starts -->
-      <mat-grid-list cols="9" rowHeight="75px">
-        <mat-grid-tile [rowspan]="1" class="login-icon">
-          <mat-icon>lock</mat-icon>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="7">
-          <mat-form-field class="justifier">
-            <input matInput placeholder="Username" text="text">
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-      <!-- Markup for getting Username ends -->
+    <!-- Markup for getting Password starts -->
+    <mat-grid-list cols="9" rowHeight="100px">
+      <mat-grid-tile [rowspan]="1"  class="login-icon">
+        <mat-icon>remove_red_eye</mat-icon>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="7">
+        <mat-form-field class="justifier">
+          <input matInput placeholder="Password" text="password">
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <!-- Markup for getting Password ends -->
 
-      <!-- Markup for getting Password starts -->
-      <mat-grid-list cols="9" rowHeight="100px">
-        <mat-grid-tile [rowspan]="1"  class="login-icon">
-          <mat-icon>remove_red_eye</mat-icon>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="7">
-          <mat-form-field class="justifier">
-            <input matInput placeholder="Password" text="password">
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-      <!-- Markup for getting Password ends -->
-
-      <button mat-raised-button class="login-button" (click)="auth.login()">
-        <mat-icon>input</mat-icon> Login
-      </button>
-    </div>
-    <!-- Template Body ends -->
+    <button mat-raised-button class="login-button" (click)="auth.login()">
+      <mat-icon>input</mat-icon> Login
+    </button>
   </div>
+  <!-- Template Body ends -->
 </div>

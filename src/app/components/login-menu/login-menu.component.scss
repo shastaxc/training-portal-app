@@ -2,15 +2,19 @@
   '../../../sass/themes/default';
 
 :host{
+  display:flex;
+  position:relative;
   width:85%;
-  margin:auto;
+  height:100%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 #logo-container{
   position:absolute;
-  margin:auto;
-  width:85%;
-  z-index:1;
+  width:100%;
+  height:auto;
+  z-index:-1;
   pointer-events:none;
 }
 
@@ -24,18 +28,14 @@
   float:right;
 }
 
-.login-page-container{
-  display:flex;
-  width:100%;
-  justify-content: center;
-}
-
 .login-container{
   display:flex;
   flex-direction:column;
+  flex-grow:0;
   width:40%;
   min-width:220px;
   min-height:300px;
+  margin:auto;
   padding: 0% !important;
 	background-color: #fff;
 	-webkit-box-shadow: 2px 4px 58px -20px rgba(0,0,0,1);
