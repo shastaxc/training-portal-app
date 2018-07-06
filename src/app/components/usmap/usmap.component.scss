@@ -53,6 +53,13 @@
   stroke-width:2;
 }
 
+.markers{
+  fill:red;
+  stroke: rgba(45h,38h,23h,1);
+  stroke-width:1;
+  stroke-opacity:0.5;
+}
+
 %blankstate{
   //fill: #7c7760;
   fill:$primary-color;
@@ -74,10 +81,9 @@
 #AL { @extend %highlightstate; }    // Alabama
 #AR { @extend %blankstate; }        // Arkansas
 #AZ { @extend %highlightstate; }    // Arizona
-#CA { @extend %highlightstate; opacity:0.2; }    // California
+#CA { @extend %highlightstate; }    // California
 #CO { @extend %highlightstate; }    // Colorado
 #CT { @extend %blankstate; }        // Connecticut
-#DC { @extend %highlightstate; }    // District of Columbia
 #DE { @extend %blankstate; }        // Delaware
 #FL { @extend %highlightstate; }    // Florida
 #GA { @extend %highlightstate; }    // Georgia
@@ -105,13 +111,13 @@
 #NV { @extend %blankstate; }        // Nevada
 #NY { @extend %highlightstate; }    // New York
 #OH { @extend %blankstate; }        // Ohio
-#OK { @extend %blankstate; }        // Oklahoma
+#OK { @extend %highlightstate; }    // Oklahoma
 #OR { @extend %blankstate; }        // Oregon
 #PA { @extend %highlightstate; }    // Pennsylvania
 #RI { @extend %blankstate; }        // Rhode Island
 #SC { @extend %highlightstate; }    // South Carolina
 #SD { @extend %blankstate; }        // South Dakota
-#TN { @extend %highlightstate; }    // Tennessee
+#TN { @extend %blankstate; }        // Tennessee
 #TX { @extend %highlightstate; }    // Texas
 #UT { @extend %highlightstate; }    // Utah
 #VA { @extend %highlightstate; }    // Virginia
@@ -119,7 +125,7 @@
 #WA { @extend %highlightstate; }    // Washington
 #WI { @extend %highlightstate; }    // Wisconsin
 #WV { @extend %blankstate; }        // West Virginia
-#WY { @extend %highlightstate; }    // Wyoming
+#WY { @extend %blankstate; }    // Wyoming
 
 // Territories
 #AS { @extend %blankstate; }        // American Samoa
@@ -127,3 +133,19 @@
 #MP { @extend %blankstate; }        // Northern Mariana Islands
 #PR { @extend %highlightstate; }    // Puerto Rico
 #VI { @extend %blankstate; }        // U.S. Virgin Islands
+
+.tooltips{
+  visibility:hidden;
+
+  rect{
+    width:100%;
+    height:100%;
+    fill:#ccffff;
+    stroke:#337777;
+    stroke-width:1;
+  }
+  text{
+    font-size:1em;
+    font-family:Georgia, Times, "Times New Roman", serif;
+  }
+}
