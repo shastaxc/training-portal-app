@@ -9,13 +9,23 @@ import { FormControl } from '@angular/forms';
 })
 export class PlanningSelectComponent implements OnInit {
 
-  selectDomainControl = new FormControl();
-  selectClassControl = new FormControl();
-  selectPOIControl = new FormControl();
+  domainControl = new FormControl();
+  classControl = new FormControl();
+  poiControl = new FormControl();
+  instructorControl = new FormControl();
+  dateControl = new FormControl();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  findResults(): void {
+    if (this.domainControl.value && this.classControl.value
+      && this.poiControl.value && this.instructorControl.value
+      && this.dateControl.value) {
+      // Retrieve contents and populate page
+    }
   }
 
 }

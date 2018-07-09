@@ -4,7 +4,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule,
   ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule } from '@angular/material';
+import {
+  MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+} from '@angular/material';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MaterialModule } from './modules/material.module';
@@ -95,7 +99,9 @@ import { AuthService } from './services/auth.service';
     MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     AuthService
