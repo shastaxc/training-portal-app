@@ -9,11 +9,20 @@
   margin-left:auto;
   margin-right:auto;
   padding: 10px 0 10px 0;
-  background:rgba(104,92,62,0.7);
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: -1;
+    background: mat-color($primary,A700);
+  }
 }
 
 #logo-container{
-  display:none;
   position:absolute;
   width:100%;
   height:auto;
@@ -50,26 +59,26 @@
 
 .frames{
   fill:none;
-  stroke: rgba(45h,38h,23h,1);
+  stroke: mat-color($primary,A700);
   stroke-width:2;
 }
 
 .markers{
-  fill:red;
-  stroke: rgba(45h,38h,23h,1);
+  fill:mat-color($warn);
+  stroke: mat-color($primary,A700);
   stroke-width:1;
   stroke-opacity:0.5;
 }
 
 %blankstate{
-  fill:$primary-color;
-  opacity:0.2;
-  stroke: rgba(45h,38h,23h,0.5);
+  fill: mat-color($primary,lighter);
+  opacity:0.4;
+  stroke: mat-color($primary,A700);
 }
 
 %highlightstate{
-  fill:$primary-color;
-  stroke: rgba(45h,38h,23h,1);
+  fill: mat-color($primary,lighter);
+  stroke: mat-color($primary,A700);
   stroke-width:0.5;
 }
 
@@ -142,8 +151,8 @@
   rect{
     width:100%;
     height:100%;
-    fill:$light-teal;
-    stroke:$very-dark-teal;
+    fill:mat-color($accent,lighter);
+    stroke:mat-color($accent,darker);
     stroke-width:1;
   }
   text{

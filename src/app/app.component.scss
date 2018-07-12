@@ -1,5 +1,5 @@
 @import
-  '../sass/themes/default';
+  '../sass/themes/_default.scss';
 
 #pg-container{
   width:100%;
@@ -15,7 +15,7 @@
   left:0;
   right:0;
   height:$header-height;
-  border-bottom:1px solid #3f3208;
+  border-bottom:1px solid mat-color($primary,A700);
   overflow:hidden;
 }
 
@@ -33,7 +33,7 @@
   bottom:0;
   left:0;
   right:0;
-  height:$footer-height;
-  border-top:1px solid #3f3208;
+  height:calc($footer-height + 1px);
+  border-top:1px solid mat-color($primary,A700);
   overflow:hidden;
 }

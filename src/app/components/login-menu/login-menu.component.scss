@@ -46,7 +46,7 @@
 .login-box-header{
 	width: 100%;
   flex-shrink:0;
-  background-color: $secondary-color;
+  background-color: mat-color($primary,darker);
   text-align: center;
   vertical-align: middle;
   font-size: 20px;
@@ -74,6 +74,6 @@
 .login-button{
 	width: 100%;
 	padding:1.5% !important;
-  background-color: $secondary-color;
+  background-color: mat-color($primary);
   font-size: 1.5em;
 }

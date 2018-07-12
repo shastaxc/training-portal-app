@@ -9,10 +9,6 @@
 
 $primary: map-get($arizona-theme,primary);
 $accent: map-get($arizona-theme,accent);
+$warn: map-get($arizona-theme,warn);
 $foreground: map-get($arizona-theme,foreground);
-
-$primary-color: mat-color($primary,lighter);
-$secondary-color: mat-color($primary,darker);
-$brand-color: mat-color($accent);
-$text-color:mat-color($foreground,text);
-
+$background: map-get($arizona-theme,background);

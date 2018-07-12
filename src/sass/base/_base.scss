@@ -30,7 +30,7 @@ html {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: mat-color($accent);
   text-decoration: none;
 
   @include on-event {
