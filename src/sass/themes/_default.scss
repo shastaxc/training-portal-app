@@ -1,15 +1,18 @@
-// -----------------------------------------------------------------------------
-// When having several themes, this file contains everything related to the
-// default one.
-// -----------------------------------------------------------------------------
+// All themes should be included here.
+
 @import
   '~@angular/material/theming',
-  '../abstracts/variables',
-  '~@angular/material/prebuilt-themes/indigo-pink.css';
+  'arizona.scss';
 @include mat-core();
 
-$primary-color:$light-tan;
-$secondary-color:$dark-tan;
-$text-color: $very-dark-grey;
-$brand-color: $black;
-$dark-hover: $very-dark-tan;
+@include angular-material-theme($arizona-theme);
+
+$primary: map-get($arizona-theme,primary);
+$accent: map-get($arizona-theme,accent);
+$foreground: map-get($arizona-theme,foreground);
+
+$primary-color: mat-color($primary,lighter);
+$secondary-color: mat-color($primary,darker);
+$brand-color: mat-color($accent);
+$text-color:mat-color($foreground,text);
+

@@ -1,0 +1,91 @@
+// -----------------------------------------------------------------------------
+// When having several themes, this file contains everything related to the
+// default one.
+// -----------------------------------------------------------------------------
+@import
+  '~@angular/material/theming',
+  '../abstracts/variables';
+/*
+$primary-color:$light-tan;
+$secondary-color:$dark-tan;
+$brand-color:$very-dark-teal;
+$text-color: $very-dark-grey;
+$bg-accent-color: $light-teal;
+$link-color: $very-dark-teal;
+$link-hover-color: $dark-teal;
+*/
+// define a real custom palette (using http://mcg.mbitson.com)
+$sand-palette: (
+    50 : #fbfbf6,
+    100 : #f6f5e9,
+    200 : #f0eeda,
+    300 : #e9e7cb,
+    400 : #e5e1bf,
+    500 : #e0dcb4,
+    600 : #dcd8ad,
+    700 : #d8d3a4,
+    800 : #d3ce9c,
+    900 : #cbc58c,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fffef9,
+    A700 : #fffce0,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+$teal-palette: (
+  50 : #e4f2f4,
+  100 : #badee4,
+  200 : #8dc8d2,
+  300 : #5fb1c0,
+  400 : #3ca1b3,
+  500 : #1a90a5,
+  600 : #17889d,
+  700 : #137d93,
+  800 : #0f738a,
+  900 : #086179,
+  A100 : #a8eaff,
+  A200 : #75deff,
+  A400 : #42d2ff,
+  A700 : #29ccff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+// include the custom theme components into a theme object
+$arizona-theme: mat-light-theme(
+  mat-palette($sand-palette),
+  mat-palette($teal-palette),
+  mat-palette($mat-red)
+);

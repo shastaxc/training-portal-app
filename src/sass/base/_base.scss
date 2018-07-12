@@ -34,7 +34,7 @@ a {
   text-decoration: none;
 
   @include on-event {
-    color: $text-color;
+    color: mat-color($accent,300);
     text-decoration: underline;
   }
 }

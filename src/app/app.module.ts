@@ -20,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { OperationsComponent } from './pages/operations/operations.component';
 import { CalendarComponent } from './pages/operations/calendar/calendar.component';
 import { PlanningComponent } from './pages/operations/planning/planning.component';
+import { ClosedOpsComponent } from './pages/operations/closed-ops/closed-ops.component';
 
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { TrainingReqComponent } from './pages/resources/training-req/training-req.component';
@@ -89,7 +90,8 @@ import { AuthService } from './services/auth.service';
     MissionChecklistComponent,
     PlanningComponent,
     PlanningSelectComponent,
-    UsmapComponent
+    UsmapComponent,
+    ClosedOpsComponent
   ],
   imports: [
     BrowserModule,

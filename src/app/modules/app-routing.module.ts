@@ -9,6 +9,7 @@ import { NotFoundComponent } from '../pages/not-found/not-found.component';
 import { OperationsComponent } from '../pages/operations/operations.component';
 import { CalendarComponent } from '../pages/operations/calendar/calendar.component';
 import { PlanningComponent } from '../pages/operations/planning/planning.component';
+import { ClosedOpsComponent} from '../pages/operations/closed-ops/closed-ops.component';
 
 import { ResourcesComponent } from '../pages/resources/resources.component';
 import { TrainingReqComponent } from '../pages/resources/training-req/training-req.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
 
   { path: 'calendar', component: CalendarComponent },
   { path: 'planning', component: PlanningComponent },
+  { path: 'closedops', component: ClosedOpsComponent },
 
   { path: 'trainingreq', component: TrainingReqComponent },
   { path: 'instructors', component: InstructorsComponent, children: [
