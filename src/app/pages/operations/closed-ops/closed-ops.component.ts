@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClosedOpsComponent implements OnInit {
 
+  title = 'Closed Operations';
+
   constructor() { }
 
   ngOnInit() {
