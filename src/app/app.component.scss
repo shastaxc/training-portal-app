@@ -32,7 +32,7 @@
   bottom:0;
   left:0;
   right:0;
-  height:calc($footer-height + 1px);
+  height:calc(#{$footer-height} + 1px);
   border-top:1px solid mat-color($primary,A700);
   overflow:hidden;
 }
