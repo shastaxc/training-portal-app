@@ -55,6 +55,7 @@ import { LoginMenuComponent } from './components/login-menu/login-menu.component
 import { PlanningSelectComponent } from './components/planning-select/planning-select.component';
 
 import { AuthService } from './services/auth.service';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { AuthService } from './services/auth.service';
     PlanningSelectComponent,
     CurrentOpsComponent,
     UsmapComponent,
-    ClosedOpsComponent
+    ClosedOpsComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
