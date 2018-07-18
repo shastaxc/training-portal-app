@@ -1,5 +1,4 @@
-@import
-  '../../../sass/themes/default';
+@import '../../../sass/styles';
 
 #footer-container{
   display:flex;
@@ -16,6 +15,7 @@
 }
 
 #foot-mid{
+  content:'Miscellaneous info such as address and disclaimers and licenses. Maybe put a contact link down here with a phone number.\AWe could even throw in another logo right here. Site version #{$site-version}';
   text-align:center;
   flex-grow:1;
   font-size:12px;

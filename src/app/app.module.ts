@@ -18,7 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { OperationsComponent } from './pages/operations/operations.component';
-import { PlanningComponent } from './pages/operations/planning/planning.component';
+import { PlanningOpsComponent } from './pages/operations/planning-ops/planning-ops.component';
+import { CurrentOpsComponent } from './pages/operations/current-ops/current-ops.component';
 import { ClosedOpsComponent } from './pages/operations/closed-ops/closed-ops.component';
 
 import { ResourcesComponent } from './pages/resources/resources.component';
@@ -86,8 +87,9 @@ import { AuthService } from './services/auth.service';
     MapDialogComponent,
     LoginMenuComponent,
     MissionChecklistComponent,
-    PlanningComponent,
+    PlanningOpsComponent,
     PlanningSelectComponent,
+    CurrentOpsComponent,
     UsmapComponent,
     ClosedOpsComponent
   ],

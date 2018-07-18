@@ -1,5 +1,4 @@
-@import
-  '../../../sass/themes/default';
+@import '../../../sass/styles';
 
 #navbar{
   display:flex;
@@ -8,6 +7,11 @@
   background-color: mat-color($primary,darker);
   overflow:hidden;
   padding:0;
+
+  button{
+    background-color: mat-color($primary,lighter);
+    margin:0px;
+  }
 }
 
 .circular{
@@ -16,58 +20,66 @@
 
 .big-btn-wrapper{
   cursor:pointer;
-  height:52px;
+  height:calc(#{$header-height} - 1px);
   display:flex;
   align-items:center;
   padding:0px 1px;
-  margin: 0px 2px;
+  margin: 0px 2px 1px 2px;
 }
 
-#navbar button{
-  background-color: mat-color($primary,lighter);
-  margin:0px;
-}
-
-#head-home, #head-links, #head-personal {
+#head-home{
   padding:0px;
   margin:0px;
-}
 
-#head-home > :first-child,
-#head-links > :first-child,
-#head-personal > :first-child{
-  margin-left:10px;
-}
+  & > :first-child{
+    margin-left:10px;
+  }
+  & > :last-child{
+    margin-right:10px;
+  }
 
-#head-home > :last-child,
-#head-links > :last-child,
-#head-personal > :last-child{
-  margin-right:10px;
-}
-
-#head-home .mat-icon{
-  width:34px;
-  height:34px;
-  text-align:center;
-  padding:0px;
-}
-
-#head-home .material-icons{
-  font-size:34px;
+  .mat-icon{
+    width:34px;
+    height:34px;
+    text-align:center;
+    padding:0px;
+  }
+  .material-icons{
+    font-size:34px;
+  }
 }
 
 #head-links{
   display:flex;
   flex-grow:1;
+  padding:0px;
+  margin:0px;
+
+  & > :first-child{
+    margin-left:10px;
+  }
+  & > :last-child{
+    margin-right:10px;
+  }
 }
 
 #head-personal{
   display:flex;
-}
-
-#head-personal button{
   padding:0px;
-  min-width:36px;
+  margin:0px;
+
+  & > :first-child{
+    margin-left:10px;
+  }
+  & > :last-child{
+    margin-right:10px;
+  }
+
+  button{
+    padding-left:0;
+    padding-right:0;
+    min-width:36px;
+  }
 }
 
 .navbtnxs{

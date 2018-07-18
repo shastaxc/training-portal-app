@@ -31,17 +31,14 @@ $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
 $footer-height:35px;
 $header-height:53px;
 
-
-
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
-
-
-
 
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
+
+$site-version: '0.13';

@@ -7,7 +7,8 @@ import { SettingsComponent } from '../pages/settings/settings.component';
 import { NotFoundComponent } from '../pages/not-found/not-found.component';
 
 import { OperationsComponent } from '../pages/operations/operations.component';
-import { PlanningComponent } from '../pages/operations/planning/planning.component';
+import { PlanningOpsComponent } from '../pages/operations/planning-ops/planning-ops.component';
+import { CurrentOpsComponent } from '../pages/operations/current-ops/current-ops.component';
 import { ClosedOpsComponent} from '../pages/operations/closed-ops/closed-ops.component';
 
 import { ResourcesComponent } from '../pages/resources/resources.component';
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent },
   { path: 'settings', component: SettingsComponent },
 
-  { path: 'planning', component: PlanningComponent },
+  { path: 'planningops', component: PlanningOpsComponent },
+  { path: 'currentops', component: CurrentOpsComponent },
   { path: 'closedops', component: ClosedOpsComponent },
 
   { path: 'trainingreq', component: TrainingReqComponent },

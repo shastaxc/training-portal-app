@@ -3,49 +3,40 @@
 // default one.
 // -----------------------------------------------------------------------------
 @import
-  '~@angular/material/theming',
-  '../abstracts/variables';
-/*
-$primary-color:$light-tan;
-$secondary-color:$dark-tan;
-$brand-color:$very-dark-teal;
-$text-color: $very-dark-grey;
-$bg-accent-color: $light-teal;
-$link-color: $very-dark-teal;
-$link-hover-color: $dark-teal;
-*/
-// define a real custom palette (using http://mcg.mbitson.com)
+  '~@angular/material/theming';
+
+// define a custom palette (using http://mcg.mbitson.com)
 $sand-palette: (
-    50 : #fbfbf6,
-    100 : #f6f5e9,
-    200 : #f0eeda,
-    300 : #e9e7cb,
-    400 : #e5e1bf,
-    500 : #e0dcb4,
-    600 : #dcd8ad,
-    700 : #d8d3a4,
-    800 : #d3ce9c,
-    900 : #a79d73,
-    A100 : #ffffff,
-    A200 : #ffffff,
-    A400 : #685c3e,
-    A700 : #504730,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
-        700 : #000000,
-        800 : #000000,
-        900 : #000000,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
+  50 : #fbfbf6,
+  100 : #f6f5e9,
+  200 : #f0eeda,
+  300 : #e9e7cb,
+  400 : #e5e1bf,
+  500 : #e0dcb4,
+  600 : #dcd8ad,
+  700 : #d8d3a4,
+  800 : #d3ce9c,
+  900 : #a79d73,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #685c3e,
+  A700 : #504730,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
 );
 
 $teal-palette: (

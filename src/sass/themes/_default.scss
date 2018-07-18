@@ -3,6 +3,7 @@
 @import
   '~@angular/material/theming',
   'arizona.scss';
+
 @include mat-core();
 
 @include angular-material-theme($arizona-theme);

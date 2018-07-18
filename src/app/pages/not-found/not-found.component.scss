@@ -1,7 +1,9 @@
+@import '../../../sass/styles';
+
 :host{
   width:85%;
   max-height:100%;
-  margin: auto;
+  margin: 10px auto;
   display:flex;
   flex-direction:column;
 }

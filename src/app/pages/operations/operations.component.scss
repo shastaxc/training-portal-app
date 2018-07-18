@@ -1,3 +1,5 @@
+@import '../../../sass/styles';
+
 :host{
   width:85%;
   max-height:100%;
@@ -18,4 +20,9 @@
 .mat-card-content{
   font-size:18px;
   line-height:1.2;
+}
+
+ul{
+  margin-top:0.4em;
+  margin-bottom:0.4em;
 }
