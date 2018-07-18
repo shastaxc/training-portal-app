@@ -7,7 +7,6 @@ import { SettingsComponent } from '../pages/settings/settings.component';
 import { NotFoundComponent } from '../pages/not-found/not-found.component';
 
 import { OperationsComponent } from '../pages/operations/operations.component';
-import { CalendarComponent } from '../pages/operations/calendar/calendar.component';
 import { PlanningComponent } from '../pages/operations/planning/planning.component';
 import { ClosedOpsComponent} from '../pages/operations/closed-ops/closed-ops.component';
 
@@ -42,7 +41,6 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent },
   { path: 'settings', component: SettingsComponent },
 
-  { path: 'calendar', component: CalendarComponent },
   { path: 'planning', component: PlanningComponent },
   { path: 'closedops', component: ClosedOpsComponent },
 

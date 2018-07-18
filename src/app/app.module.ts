@@ -18,7 +18,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 import { OperationsComponent } from './pages/operations/operations.component';
-import { CalendarComponent } from './pages/operations/calendar/calendar.component';
 import { PlanningComponent } from './pages/operations/planning/planning.component';
 import { ClosedOpsComponent } from './pages/operations/closed-ops/closed-ops.component';
 
@@ -79,7 +78,6 @@ import { AuthService } from './services/auth.service';
     InstructorsComponent,
     InstListComponent,
     InstDetailComponent,
-    CalendarComponent,
     CoursesComponent,
     CdrlComponent,
     AqlMetricsComponent,
