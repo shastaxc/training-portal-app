@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule,
@@ -105,7 +106,8 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [
     AuthService
