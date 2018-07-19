@@ -9,7 +9,7 @@ import * as data from '../../../../../assets/docs/instructors.json';
 export class InstListComponent implements OnInit {
 
   title = 'Instructor List';
-  instructors = <any>data;
+  instructors: any[] = data.default;
 
   constructor() { }
 

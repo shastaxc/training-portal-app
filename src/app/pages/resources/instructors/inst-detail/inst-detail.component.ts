@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 export class InstDetailComponent implements OnInit {
 
   title = 'Instructor Detail';
-  instructors = <any>data;
+  instructors: any[] = data.default;
   id: number;
   details: any;
 
