@@ -16,6 +16,12 @@ import { MaterialModule } from './modules/material.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CalendarListComponent } from './components/calendar-list/calendar-list.component';
+import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
+import { LoginMenuComponent } from './components/login-menu/login-menu.component';
+import { PlanningSelectComponent } from './components/planning-select/planning-select.component';
+import { UsmapComponent } from './components/usmap/usmap.component';
+import { WorldmapComponent } from './components/worldmap/worldmap.component';
 
 import { OperationsComponent } from './pages/operations/operations.component';
 import { PlanningOpsComponent } from './pages/operations/planning-ops/planning-ops.component';
@@ -44,18 +50,12 @@ import { CdrlComponent } from './pages/contractmgmt/cdrl/cdrl.component';
 import { AqlMetricsComponent } from './pages/contractmgmt/aql-metrics/aql-metrics.component';
 import { ConstantviewComponent } from './pages/contractmgmt/constantview/constantview.component';
 
-import { UsmapComponent } from './components/usmap/usmap.component';
-import { WorldmapComponent } from './components/worldmap/worldmap.component';
 import { AccountComponent } from './pages/account/account.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
-import { LoginMenuComponent } from './components/login-menu/login-menu.component';
-import { PlanningSelectComponent } from './components/planning-select/planning-select.component';
 
 import { AuthService } from './services/auth.service';
-import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +93,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     CurrentOpsComponent,
     UsmapComponent,
     ClosedOpsComponent,
-    CalendarComponent
+    CalendarListComponent
   ],
   imports: [
     BrowserModule,
