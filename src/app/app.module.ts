@@ -57,6 +57,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 import { AuthService } from './services/auth.service';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { AuthService } from './services/auth.service';
     CurrentOpsComponent,
     UsmapComponent,
     ClosedOpsComponent,
-    CalendarListComponent
+    CalendarListComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
