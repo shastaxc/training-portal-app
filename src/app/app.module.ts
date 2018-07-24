@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,16 +12,18 @@ import {
   MatNativeDateModule
 } from '@angular/material';
 import { CalendarModule } from 'angular-calendar';
+import { CalUtilsModule } from './components/calendar/cal-utils/module';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MaterialModule } from './modules/material.module';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { CalendarListComponent } from './components/calendar-list/calendar-list.component';
-import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { LoginMenuComponent } from './components/login-menu/login-menu.component';
+import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { PlanningSelectComponent } from './components/planning-select/planning-select.component';
 import { UsmapComponent } from './components/usmap/usmap.component';
 import { WorldmapComponent } from './components/worldmap/worldmap.component';
@@ -58,7 +61,6 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 import { AuthService } from './services/auth.service';
-import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +113,9 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     MatDatepickerModule,
     MatNativeDateModule,
     HttpClientModule,
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    CommonModule,
+    CalUtilsModule
   ],
   providers: [
     AuthService
