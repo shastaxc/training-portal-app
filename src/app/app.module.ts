@@ -10,6 +10,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule
 } from '@angular/material';
+import { CalendarModule } from 'angular-calendar';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MaterialModule } from './modules/material.module';
@@ -109,7 +110,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    CalendarModule.forRoot()
   ],
   providers: [
     AuthService

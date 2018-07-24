@@ -12,9 +12,10 @@
   'themes/default';
 
 // Vendors
-//@import
+@import
   //'vendor/fontawesome/font-awesome',
-  //'vendor/normalize';
+  //'vendor/normalize',
+  '../../node_modules/angular-calendar/scss/angular-calendar.scss';
 
 // Base stuff
 @import
