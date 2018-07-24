@@ -1,25 +1,26 @@
-@import '../../../sass/styles';
+@import '../../../../sass/styles';
 
-.month-view-btn{
-
+:host{
+  display:flex;
+  justify-content:space-between;
+  align-content:center;
+  flex-wrap:wrap;
 }
 
-.week-view-btn{
+.nav-btn-grp{
+  display:block;
 
+  button{
+    margin-left:1px;
+    margin-right:1px;
+  }
 }
 
-.day-view-btn{
+.view-btn-grp{
+  display:block;
 
-}
-
-.previous-btn{
-
-}
-
-.today-btn{
-
-}
-
-.next-btn{
-
+  button{
+    margin-left:1px;
+    margin-right:1px;
+  }
 }

@@ -1,48 +1,45 @@
-<div class="third-grp">
-  <div class="btn-grp">
-    <button mat-button
-      mwlCalendarPreviousView
-      [view]="view"
-      [(viewDate)]="viewDate"
-      (viewDateChange)="viewDateChange.next(viewDate)">
-      Previous
-    </button>
-    <button mat-button
-      mwlCalendarToday
-      [(viewDate)]="viewDate"
-      (viewDateChange)="viewDateChange.next(viewDate)">
-      Today
-    </button>
-    <button mat-button
-      mwlCalendarNextView
-      [view]="view"
-      [(viewDate)]="viewDate"
-      (viewDateChange)="viewDateChange.next(viewDate)">
-      Next
-    </button>
-  </div>
+<div class="nav-btn-grp">
+  <button mat-flat-button
+    mwlCalendarPreviousView
+    [view]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="viewDateChange.next(viewDate)">
+    Previous
+  </button>
+  <button mat-stroked-button
+    color="accent"
+    mwlCalendarToday
+    [(viewDate)]="viewDate"
+    (viewDateChange)="viewDateChange.next(viewDate)">
+    Today
+  </button>
+  <button mat-flat-button
+    mwlCalendarNextView
+    [view]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="viewDateChange.next(viewDate)">
+    Next
+  </button>
 </div>
 
-<div class="third-grp">
+<div class="title-grp">
   <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</h3>
 </div>
 
-<div class="third-grp">
-  <div class="btn-grp">
-    <button mat-button
-      (click)="viewChange.emit('month')"
-      [class.active]="view === 'month'">
-      Month
-    </button>
-    <button mat-button
-      (click)="viewChange.emit('week')"
-      [class.active]="view === 'week'">
-      Week
-    </button>
-    <button mat-button
-      (click)="viewChange.emit('day')"
-      [class.active]="view === 'day'">
-      Day
-    </button>
-  </div>
+<div class="view-btn-grp">
+  <button mat-flat-button
+    (click)="viewChange.emit('month')"
+    [class.active]="view === 'month'">
+    Month
+  </button>
+  <button mat-flat-button
+    (click)="viewChange.emit('week')"
+    [class.active]="view === 'week'">
+    Week
+  </button>
+  <button mat-flat-button
+    (click)="viewChange.emit('day')"
+    [class.active]="view === 'day'">
+    Day
+  </button>
 </div>

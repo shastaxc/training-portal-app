@@ -4,15 +4,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule,
-  ReactiveFormsModule } from '@angular/forms';
 import {
-  MatDialogModule,
-  MatDatepickerModule,
-  MatNativeDateModule
-} from '@angular/material';
+  FormsModule,
+  ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule } from 'angular-calendar';
-import { CalUtilsModule } from './components/calendar/cal-utils/module';
+import { CalUtilsModule } from './components/calendar/cal-utils/cal-utils.module';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MaterialModule } from './modules/material.module';
@@ -106,12 +102,9 @@ import { AuthService } from './services/auth.service';
     FlexLayoutModule,
     AppRoutingModule,
     MaterialModule,
-    MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
     HttpClientModule,
     CalendarModule.forRoot(),
     CommonModule,

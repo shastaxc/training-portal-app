@@ -1,4 +1,3 @@
-<link href="https://unpkg.com/angular-calendar@0.25.2/css/angular-calendar.css" rel="stylesheet">
 <app-calendar-utils-calendar-header
   [(view)]="view"
   [(viewDate)]="viewDate"
@@ -10,7 +9,8 @@
   <mwl-calendar-month-view
     *ngSwitchCase="'month'"
     [viewDate]="viewDate"
-    [events]="calendarEvents">
+    [events]="calendarEvents"
+    (beforeViewRender)="beforeMonthViewRender($event)">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view
     *ngSwitchCase="'week'"

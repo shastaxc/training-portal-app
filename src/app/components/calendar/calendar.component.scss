@@ -1,3 +1,8 @@
 :host{
+  min-width:760px;
   max-width:1200px;
+}
+
+.cal-month-view .cal-day-badge{
+  display:none !important;
 }

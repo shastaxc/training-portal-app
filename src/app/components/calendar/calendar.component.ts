@@ -6,11 +6,14 @@ import {
   startOfDay,
   endOfMonth,
   endOfWeek,
-  endOfDay
+  endOfDay,
+  subDays,
+  addDays
 } from 'date-fns';
 import { RRule } from 'rrule';
-import { CalendarEvent } from 'angular-calendar';
+import { CalendarEvent, CalendarMonthViewDay } from 'angular-calendar';
 import { colors } from './cal-utils/colors';
+import { CalendarEventActionsComponent } from '../../../../node_modules/angular-calendar/modules/common/calendar-event-actions.component';
 
 interface RecurringEvent {
   title: string;
@@ -35,7 +38,7 @@ export class CalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  recurringEvents: RecurringEvent[] = [
+  recurringEvents: RecurringEvent[] = [/*
     {
       title: 'Recurs on the 5th of each month',
       color: colors.yellow,
@@ -60,17 +63,48 @@ export class CalendarComponent implements OnInit {
         freq: RRule.WEEKLY,
         byweekday: [RRule.MO]
       }
+    }*/
+  ];
+
+  calendarEvents: CalendarEvent[] = [
+    {
+      start: new Date('01OCT2018'),
+      end: new Date('05OCT2018'),
+      title: 'Certified Ethical Hacker (CEH)',
+      color: colors.red
+    },
+    {
+      start: new Date('01OCT2018'),
+      end: new Date('05OCT2018'),
+      title: 'Cisco Certified Network Associate Security (CCNA-Security)',
+      color: colors.red
+    },
+    {
+      start: new Date('15OCT2018'),
+      end: new Date('19OCT2018'),
+      title: 'Basic IT',
+      color: colors.blue
+    },
+    {
+      start: new Date('09OCT2018'),
+      end: new Date('19OCT2018'),
+      title: 'CC STT',
+      color: colors.yellow
     }
   ];
 
-  calendarEvents: CalendarEvent[] = [];
+  beforeMonthViewRender({ body }: { body: CalendarMonthViewDay[] }): void {
+    body.forEach(day => {
+      day.badgeTotal = 0;
+    });
+  }
 
   ngOnInit(): void {
     this.updateCalendarEvents();
   }
 
   updateCalendarEvents(): void {
-    this.calendarEvents = [];
+    // this.calendarEvents = [];
 
     const startOfPeriod: any = {
       month: startOfMonth,

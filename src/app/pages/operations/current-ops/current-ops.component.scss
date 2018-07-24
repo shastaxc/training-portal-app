@@ -11,6 +11,7 @@
 .scroll-wrapper{
   flex-grow:1;
   overflow-y:auto;
+  overflow-x:hidden;
 }
 
 .top-margin, .bottom-margin{
