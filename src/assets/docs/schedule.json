@@ -1,26 +1,695 @@
 [
   {
-    "start":"01OCT2018",
-    "end":"05OCT2018",
-    "title":"Certified Ethical Hacker (CEH)",
-    "location":"Ft Gordon"
+    "title": "Certified Ethical Hacker (CEH)",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Ft Gordon",
+    "domain": "Cyber"
   },
   {
-    "start":"01OCT2018",
-    "end":"05OCT2018",
-    "title":"Cisco Certified Network Associate Security (CCNA-Security)",
-    "location":"Ft Gordon"
+    "title": "Cisco Certified Network Associate Security (CCNA-Security)",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Ft Gordon",
+    "domain": "Cyber"
   },
   {
-    "start":"09OCT2018)",
-    "end":"019OCT2018",
-    "title":"STT NET",
-    "location":"Ft Bliss"
+    "title": "CompTIA Security+",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Cyber"
   },
   {
-    "start":"15OCT2018",
-    "end":"16NOV2018",
-    "title":"DIRECT",
-    "location":"Hawaii"
+    "title": "Certified Ethical Hacker (CEH)",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Cyber"
+  },
+  {
+    "title": "RMF",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "Leavenworth",
+    "domain": "Cyber"
+  },
+  {
+    "title": "CompTIA Security+",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Japan",
+    "domain": "Cyber"
+  },
+  {
+    "title": "HBSS - Administrator",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Cyber"
+  },
+  {
+    "title": "CCP",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-30T18:00:00-0400",
+    "location": "Ft Gordon",
+    "domain": "Cyber"
+  },
+  {
+    "title": "Certified Information Security Manager (CISM)",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Korea",
+    "domain": "Cyber"
+  },
+  {
+    "title": "CompTIA Security+",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "MD",
+    "domain": "Cyber"
+  },
+  {
+    "title": "Secure Wireless",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Hawaii",
+    "domain": "Cyber"
+  },
+  {
+    "title": "Secure Wireless",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "CT",
+    "domain": "Cyber"
+  },
+  {
+    "title": "CCP",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Aberdeen Proving Ground",
+    "domain": "Cyber"
+  },
+  {
+    "title": "DCO",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Ft Sam Houston",
+    "domain": "Cyber"
+  },
+  {
+    "title": "HBSS - Administrator",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Sam Houston",
+    "domain": "Cyber"
+  },
+  {
+    "title": "Certified Information Systems Security Professional (CISSP)",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Gordon",
+    "domain": "Cyber"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "CT",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "VWP NET",
+    "start": "2018-10-24T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "STT",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "Huachuca",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-28T18:00:00-0400",
+    "location": "Huachuca",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "STT NET",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Bliss",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "TriLOS",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Ft Bliss",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "SNAP",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Ft Campbell",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "Tactical Radio",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Campbell",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "Wide Area Voice",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Ft Gordon",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "EWIN-T EOL STT",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "EWIN-T EOL STT",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Ft Gordon",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "Basic IT",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "IL",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-09T18:00:00-0400",
+    "location": "Ft Drum",
+    "domain": "Tactical Transmission"
+  },
+  {
+    "title": "JNN",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Michigan",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "JNN",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Huachuca",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "SNE GPU",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-10T18:00:00-0400",
+    "location": "Ft Bragg",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "VSS Op Crs",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Ft Huachuca",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "DIRECT",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-11-16T18:00:00-0400",
+    "location": "Hawaii",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "Michigan",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Utah",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "CC STT",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Michigan",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Alaska",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "NMS Planner",
+    "start": "2018-10-24T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Germany",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Germany",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "VSS Op Crs",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL STT",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "Basic IT",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-30T18:00:00-0400",
+    "location": "Michigan",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "JNN",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-02T18:00:00-0400",
+    "location": "FL",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "SNE GPU",
+    "start": "2018-10-10T06:00:00-0400",
+    "end": "2018-10-11T18:00:00-0400",
+    "location": "Ft Bragg",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "SNE GPU",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-16T18:00:00-0400",
+    "location": "Ft Bragg",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "SNE GPU",
+    "start": "2018-10-17T06:00:00-0400",
+    "end": "2018-10-18T18:00:00-0400",
+    "location": "Ft Bragg",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "SNE GPU",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Bragg",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "SNE GPU",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-10-31T18:00:00-0400",
+    "location": "Ft Bragg",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "NMS Planner",
+    "start": "2018-10-14T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "VSS Oper Crs",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "Michigan",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "VSS Oper Crs",
+    "start": "2018-10-14T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Michigan",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "FIG",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-14T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Carson",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "NMS Planner",
+    "start": "2018-09-30T06:00:00-0400",
+    "end": "2018-10-02T18:00:00-0400",
+    "location": "Ft Riley",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "Basic IT",
+    "start": "2018-10-14T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Tulsa, OK",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Bliss",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "NMS",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-03T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-14T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Carson",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "Windows 10",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-03T18:00:00-0400",
+    "location": "Alabama",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "Basic IT",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-11-16T18:00:00-0400",
+    "location": "MN",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "VMI",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Kuwait",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Germany",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "NET User Support",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "ESM",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Ft Sam Houston",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "NMS Planner",
+    "start": "2018-10-17T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Ft Carson",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "TOC LAN Mgmt",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-09T18:00:00-0400",
+    "location": "St. Louis",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "NMS Planner",
+    "start": "2018-10-17T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "TOC LAN",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-05T18:00:00-0400",
+    "location": "Illinois",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "TOC LAN Mgmt",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "Tulsa",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "VSS",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Ft Carson",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-20T06:00:00-0400",
+    "end": "2018-10-24T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "PoP GPU",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-09T18:00:00-0400",
+    "location": "North Carolina",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "Windows 10",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-13T18:00:00-0400",
+    "location": "Ft Stewart",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Stewart",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-15T06:00:00-0400",
+    "end": "2018-10-26T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-01T06:00:00-0400",
+    "end": "2018-10-12T18:00:00-0400",
+    "location": "Ft Stewart",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "BnCPN",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-09T18:00:00-0400",
+    "location": "Hawaii",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-09T06:00:00-0400",
+    "end": "2018-10-19T18:00:00-0400",
+    "location": "JBLM",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "Basic IT",
+    "start": "2018-10-29T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "MN",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "WIN-T EOL JNN",
+    "start": "2018-10-22T06:00:00-0400",
+    "end": "2018-11-02T18:00:00-0400",
+    "location": "Hawaii",
+    "domain": "Routing & Networking"
+  },
+  {
+    "title": "PM TN INC2",
+    "start": "2018-09-27T06:00:00-0400",
+    "end": "2018-11-16T18:00:00-0400",
+    "location": "Hawaii",
+    "domain": "Fielding & Sustainment"
+  },
+  {
+    "title": "Secure Wireless",
+    "start": "2018-10-10T06:00:00-0400",
+    "end": "2018-11-08T18:00:00-0400",
+    "location": "Hawaii",
+    "domain": "Fielding & Sustainment"
+  },
+  {
+    "title": "T-CDMP",
+    "start": "2018-10-14T06:00:00-0400",
+    "end": "2018-10-28T18:00:00-0400",
+    "location": "Korea",
+    "domain": "Fielding & Sustainment"
+  },
+  {
+    "title": "Secure Wireless",
+    "start": "2018-10-10T06:00:00-0400",
+    "end": "2018-10-28T18:00:00-0400",
+    "location": "Ft Hood",
+    "domain": "Fielding & Sustainment"
+  },
+  {
+    "title": "Matrix Switch",
+    "start": "2018-10-24T06:00:00-0400",
+    "end": "2018-11-04T18:00:00-0400",
+    "location": "Guam",
+    "domain": "Fielding & Sustainment"
+  },
+  {
+    "title": "Tropo (3T)",
+    "start": "2018-10-31T06:00:00-0400",
+    "end": "2018-11-04T18:00:00-0400",
+    "location": "Ft Bliss",
+    "domain": "Fielding & Sustainment"
   }
 ]

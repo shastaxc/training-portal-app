@@ -12,7 +12,7 @@ export const colors: any = {
     secondary: '#FDF1BA'
   },
   purple: {
-    primary: '#FDF1BA',
+    primary: '#cc00ff',
     secondary: '#fae6ff'
   }
 };

@@ -1,8 +1,7 @@
-:host{
-  min-width:760px;
-  max-width:1200px;
-}
+@import '../../../sass/styles';
 
-.cal-month-view .cal-day-badge{
-  display:none !important;
+.sq-cal-event{
+  width: 15px;
+  height: 15px;
+  border-radius: 10%;
 }

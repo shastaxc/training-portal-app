@@ -10,20 +10,22 @@ import {
   subDays,
   addDays
 } from 'date-fns';
-import { RRule } from 'rrule';
-import { CalendarEvent, CalendarMonthViewDay } from 'angular-calendar';
+import { CalendarEvent } from 'angular-calendar';
 import { colors } from './cal-utils/colors';
-import { CalendarEventActionsComponent } from '../../../../node_modules/angular-calendar/modules/common/calendar-event-actions.component';
+import * as scheduledata from '../../../assets/docs/schedule.json';
 
-interface RecurringEvent {
+// TODO: Import EventColor interface instead of redefining
+interface EventColor {
+  primary: string;
+  secondary: string;
+}
+
+interface ScheduleEntry {
   title: string;
-  color: any;
-  rrule?: {
-    freq: RRule.Frequency;
-    bymonth?: number;
-    bymonthday?: number;
-    byweekday?: RRule.Weekday[];
-  };
+  start: string;
+  end: string;
+  location?: string;
+  domain: string;
 }
 
 @Component({
@@ -34,78 +36,33 @@ interface RecurringEvent {
 })
 export class CalendarComponent implements OnInit {
 
+  schedule: ScheduleEntry[] = scheduledata.default;
+
   view: string = 'month';
 
-  viewDate: Date = new Date();
-
-  recurringEvents: RecurringEvent[] = [/*
-    {
-      title: 'Recurs on the 5th of each month',
-      color: colors.yellow,
-      rrule: {
-        freq: RRule.MONTHLY,
-        bymonthday: 5
-      }
-    },
-    {
-      title: 'Recurs yearly on the 10th of the current month',
-      color: colors.blue,
-      rrule: {
-        freq: RRule.YEARLY,
-        bymonth: getMonth(new Date()) + 1,
-        bymonthday: 10
-      }
-    },
-    {
-      title: 'Recurs weekly on mondays',
-      color: colors.red,
-      rrule: {
-        freq: RRule.WEEKLY,
-        byweekday: [RRule.MO]
-      }
-    }*/
-  ];
-
-  calendarEvents: CalendarEvent[] = [
-    {
-      start: new Date('01OCT2018'),
-      end: new Date('05OCT2018'),
-      title: 'Certified Ethical Hacker (CEH)',
-      color: colors.red
-    },
-    {
-      start: new Date('01OCT2018'),
-      end: new Date('05OCT2018'),
-      title: 'Cisco Certified Network Associate Security (CCNA-Security)',
-      color: colors.red
-    },
-    {
-      start: new Date('15OCT2018'),
-      end: new Date('19OCT2018'),
-      title: 'Basic IT',
-      color: colors.blue
-    },
-    {
-      start: new Date('09OCT2018'),
-      end: new Date('19OCT2018'),
-      title: 'CC STT',
-      color: colors.yellow
-    }
-  ];
-
-  beforeMonthViewRender({ body }: { body: CalendarMonthViewDay[] }): void {
-    body.forEach(day => {
-      day.badgeTotal = 0;
-    });
-  }
+  viewDate: Date = new Date();  // Defaults to current date.
+  calendarEvents: CalendarEvent[] = [];
 
   ngOnInit(): void {
+    this.schedule.forEach(entry => {  // Loops through JSON entries
+      const calevent: CalendarEvent = {
+        title: entry.title,
+        start: new Date(entry.start),
+        end: new Date(entry.end),
+        color: this.getDomainColor(entry.domain),
+        cssClass: 'sq-cal-event',
+        meta: {
+          location: entry.location,
+          domain: entry.domain
+        }
+      };
+      this.addEvent(calevent);
+    });
+
     this.updateCalendarEvents();
   }
 
   updateCalendarEvents(): void {
-    // this.calendarEvents = [];
-
     const startOfPeriod: any = {
       month: startOfMonth,
       week: startOfWeek,
@@ -117,22 +74,36 @@ export class CalendarComponent implements OnInit {
       week: endOfWeek,
       day: endOfDay
     };
+  }
 
-    this.recurringEvents.forEach(event => {
-      const rule: RRule = new RRule(
-        Object.assign({}, event.rrule, {
-          dtstart: startOfPeriod[this.view](this.viewDate),
-          until: endOfPeriod[this.view](this.viewDate)
-        })
-      );
+  getDomainColor(domain: string): EventColor {
+    switch (domain) {
+      case 'Cyber': {
+        return colors.red;
+      }
+      case 'Tactical Transmission': {
+        return colors.blue;
+      }
+      case 'Routing & Networking': {
+        return colors.yellow;
+      }
+      case 'Fielding & Sustainment': {
+        return colors.purple;
+      }
+      default: {
+        return {
+          primary: '#333333',
+          secondary: '#dddddd'
+        };
+      }
+    }
+  }
 
-      rule.all().forEach(date => {
-        this.calendarEvents.push(
-          Object.assign({}, event, {
-            start: new Date(date)
-          })
-        );
-      });
-    });
+  addEvent(calevent: CalendarEvent): void {
+    this.calendarEvents.push(calevent);
+  }
+
+  eventClicked({ event }: { event: CalendarEvent }): void {
+    console.log('Event clicked', event);
   }
 }
