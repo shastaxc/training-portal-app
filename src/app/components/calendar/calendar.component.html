@@ -8,7 +8,8 @@
 
   <div class="cal-utilities">
     <mat-form-field>
-      <input matInput [(ngModel)]="searchText" placeholder="Search" color="accent">
+      <input matInput [(ngModel)]="searchText" (input)="onSearchChange($event.target.value)"
+        placeholder="Search" color="accent">
       <mat-icon matSuffix color="accent">search</mat-icon>
     </mat-form-field>
   </div>
@@ -22,30 +23,57 @@
   let-tooltipPlacement="tooltipPlacement"
   let-highlightDay="highlightDay"
   let-unhighlightDay="unhighlightDay"
-  let-eventClicked="eventClicked">
+  let-eventClicked="eventClicked"
+  let-tooltipTemplate="tooltipTemplate"
+  let-tooltipAppendToBody="tooltipAppendToBody">
 
-  <div class="fill-height">
-    <div class="cal-cell-top">
-      <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
-    </div>
-    <div class="cal-events">
-      <div
-        class="cal-event"
-        *ngFor="let event of day.events | filter : searchText"
-        [style.backgroundColor]="event.color.primary"
-        [ngClass]="event?.cssClass"
-        (mouseenter)="highlightDay.emit({event: event})"
-        (mouseleave)="unhighlightDay.emit({event: event})"
-        [mwlCalendarTooltip]="event.title | calendarEventTitle:'monthTooltip':event"
-        [tooltipPlacement]="tooltipPlacement"
-        (click)="$event.stopPropagation(); eventClicked.emit({event: event})">
-      </div>
+  <div class="cal-cell-top">
+    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+  </div>
+  <div class="cal-events" *ngIf="day.events.length > 0">
+    <div class="cal-event"
+      *ngFor="let event of day.events | filterEvents : searchText"
+      [style.backgroundColor]="event.color?.primary"
+      [ngClass]="'sq-cal-event'"
+      (mouseenter)="highlightDay.emit({event: event})"
+      (mouseleave)="unhighlightDay.emit({event: event})"
+      [mwlCalendarTooltip]="event.title | calendarEventTitle:'monthTooltip':event"
+      [tooltipPlacement]="tooltipPlacement"
+      [tooltipEvent]="event"
+      [tooltipTemplate]="tooltipTemplate"
+      [tooltipAppendToBody]="tooltipAppendToBody"
+      (click)="$event.stopPropagation(); eventClicked.emit({event: event})">
     </div>
   </div>
 </ng-template>
 
-<div [ngSwitch]="view">
+<ng-template
+  #weekViewEventTemplate
+  let-weekEvent="weekEvent"
+  let-tooltipPlacement="tooltipPlacement"
+  let-eventClicked="eventClicked"
+  let-tooltipTemplate="tooltipTemplate"
+  let-tooltipAppendToBody="tooltipAppendToBody">
 
+  <div class="cal-event"
+    [style.backgroundColor]="weekEvent.event.color?.secondary"
+    [style.borderColor]="weekEvent.event.color?.primary"
+    [mwlCalendarTooltip]="weekEvent.event.title | calendarEventTitle:'weekTooltip':weekEvent.event"
+    [tooltipPlacement]="tooltipPlacement"
+    [tooltipEvent]="weekEvent.event"
+    [tooltipTemplate]="tooltipTemplate"
+    [tooltipAppendToBody]="tooltipAppendToBody">
+    <mwl-calendar-event-actions [event]="weekEvent.event"></mwl-calendar-event-actions>
+    &ngsp;
+    <mwl-calendar-event-title
+      [event]="weekEvent.event"
+      view="week"
+      (mwlClick)="eventClicked.emit()">
+    </mwl-calendar-event-title>
+  </div>
+</ng-template>
+
+<div [ngSwitch]="view">
   <mwl-calendar-month-view
     *ngSwitchCase="'month'"
     [viewDate]="viewDate"
@@ -57,7 +85,8 @@
     *ngSwitchCase="'week'"
     [viewDate]="viewDate"
     [events]="calendarEvents"
-    (eventClicked)="eventClicked($event)">
+    (eventClicked)="eventClicked($event)"
+    [eventTemplate]="weekViewEventTemplate">
   </mwl-calendar-week-view>
   <mwl-calendar-day-view
     *ngSwitchCase="'day'"

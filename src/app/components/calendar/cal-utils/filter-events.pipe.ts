@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filterEvents'
 })
-export class FilterPipe implements PipeTransform {
+export class FilterEventsPipe implements PipeTransform {
   transform(items: any[], searchText: string): any[] {
     if (!items) { return []; }
     if (!searchText) { return items; }

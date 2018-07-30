@@ -13,6 +13,7 @@ import {
 import { CalendarEvent } from 'angular-calendar';
 import { colors } from './cal-utils/colors';
 import * as scheduledata from '../../../assets/docs/schedule.json';
+import { FilterEventsPipe } from './cal-utils/filter-events.pipe';
 
 // TODO: Import EventColor interface instead of redefining
 interface EventColor {
@@ -43,7 +44,10 @@ export class CalendarComponent implements OnInit {
   view: string = 'month';
 
   viewDate: Date = new Date();  // Defaults to current date.
-  calendarEvents: CalendarEvent[] = [];
+  calendarEvents: CalendarEvent[] = []; // Will change as filtered
+  calendarEventsComplete: CalendarEvent[] = []; // Will not change
+
+  constructor(private filterEventsPipe: FilterEventsPipe) {}
 
   ngOnInit(): void {
     this.schedule.forEach(entry => {  // Loops through JSON entries
@@ -52,7 +56,6 @@ export class CalendarComponent implements OnInit {
         start: new Date(entry.start),
         end: new Date(entry.end),
         color: this.getDomainColor(entry.domain),
-        cssClass: 'sq-cal-event',
         meta: {
           location: entry.location,
           domain: entry.domain
@@ -102,10 +105,15 @@ export class CalendarComponent implements OnInit {
   }
 
   addEvent(calevent: CalendarEvent): void {
+    this.calendarEventsComplete.push(calevent);
     this.calendarEvents.push(calevent);
   }
 
   eventClicked({ event }: { event: CalendarEvent }): void {
     console.log('Event clicked', event);
   }
+
+  onSearchChange(searchText: string): void {
+    this.calendarEvents = this.filterEventsPipe.transform(this.calendarEventsComplete, this.searchText);
+   }
 }
