@@ -1,15 +1,17 @@
-<app-calendar-utils-calendar-header
-  [(view)]="view"
-  [(viewDate)]="viewDate"
-  (viewDateChange)="updateCalendarEvents()"
-  (viewChange)="updateCalendarEvents()">
-</app-calendar-utils-calendar-header>
+<div class="cal-header">
+  <app-calendar-utils-calendar-header
+    [(view)]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="updateCalendarEvents()"
+    (viewChange)="updateCalendarEvents()">
+  </app-calendar-utils-calendar-header>
 
-<div class="cal-utilities">
-  <mat-form-field>
-    <input matInput [(ngModel)]="searchText" placeholder="Search" color="accent">
-    <mat-icon matSuffix color="accent">search</mat-icon>
-  </mat-form-field>
+  <div class="cal-utilities">
+    <mat-form-field>
+      <input matInput [(ngModel)]="searchText" placeholder="Search" color="accent">
+      <mat-icon matSuffix color="accent">search</mat-icon>
+    </mat-form-field>
+  </div>
 </div>
 
 <ng-template
