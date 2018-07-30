@@ -5,6 +5,13 @@
   (viewChange)="updateCalendarEvents()">
 </app-calendar-utils-calendar-header>
 
+<div class="cal-utilities">
+  <mat-form-field>
+    <input matInput [(ngModel)]="searchText" placeholder="Search" color="accent">
+    <mat-icon matSuffix color="accent">search</mat-icon>
+  </mat-form-field>
+</div>
+
 <ng-template
   #monthCellTemplate
   let-day="day"
@@ -22,7 +29,7 @@
     <div class="cal-events">
       <div
         class="cal-event"
-        *ngFor="let event of day.events"
+        *ngFor="let event of day.events | filter : searchText"
         [style.backgroundColor]="event.color.primary"
         [ngClass]="event?.cssClass"
         (mouseenter)="highlightDay.emit({event: event})"

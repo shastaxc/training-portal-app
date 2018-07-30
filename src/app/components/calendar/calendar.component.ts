@@ -36,6 +36,8 @@ interface ScheduleEntry {
 })
 export class CalendarComponent implements OnInit {
 
+  searchText: string;
+
   schedule: ScheduleEntry[] = scheduledata.default;
 
   view: string = 'month';
