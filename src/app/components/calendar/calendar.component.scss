@@ -21,4 +21,9 @@ app-calendar-utils-calendar-header{
   justify-content:flex-end;
   flex-grow:1;
   flex-wrap:wrap;
+
+  .mat-form-field{
+    margin-left:2px;
+    margin-right:2px;
+  }
 }

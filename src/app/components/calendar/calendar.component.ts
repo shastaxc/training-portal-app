@@ -38,6 +38,7 @@ interface ScheduleEntry {
 export class CalendarComponent implements OnInit {
 
   searchText: string;
+  locationSelect: string;
 
   schedule: ScheduleEntry[] = scheduledata.default;
 
@@ -113,7 +114,12 @@ export class CalendarComponent implements OnInit {
     console.log('Event clicked', event);
   }
 
-  onSearchChange(searchText: string): void {
-    this.calendarEvents = this.filterEventsPipe.transform(this.calendarEventsComplete, this.searchText);
-   }
+  onSearchChange(newSearch: string): void {
+    this.calendarEvents = this.filterEventsPipe.transform(this.calendarEventsComplete, newSearch, this.locationSelect);
+  }
+
+  onLocationSelect(newLocation: string): void {
+    this.locationSelect = newLocation;
+    this.calendarEvents = this.filterEventsPipe.transform(this.calendarEventsComplete, this.searchText, newLocation);
+  }
 }

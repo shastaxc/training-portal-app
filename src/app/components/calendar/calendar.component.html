@@ -8,9 +8,16 @@
 
   <div class="cal-utilities">
     <mat-form-field>
+      <mat-icon matPrefix color="accent">search</mat-icon>
       <input matInput [(ngModel)]="searchText" (input)="onSearchChange($event.target.value)"
         placeholder="Search" color="accent">
-      <mat-icon matSuffix color="accent">search</mat-icon>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-icon matPrefix color="accent">domain</mat-icon>
+      <mat-select placeholder="Location" [ngModel]="locationSelect" (ngModelChange)="onLocationSelect($event)">
+        <mat-option>All</mat-option>
+        <mat-option *ngFor="let location of calendarEventsComplete | filterLocations" [value]="location">{{location}}</mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 </div>
