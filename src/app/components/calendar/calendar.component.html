@@ -23,6 +23,21 @@
 </div>
 
 <ng-template
+    #customTooltipTemplate
+    let-contents="contents"
+    let-placement="placement"
+    let-event="event">
+
+    <div class="cal-tooltip" [ngClass]="'cal-tooltip-' + placement">
+        <div class="cal-tooltip-arrow"></div>
+        <div class="cal-tooltip-inner">
+          <strong>{{event.title}}</strong>
+          <span *ngIf="event.meta.location"><br />{{event.meta.location}}</span>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template
   #monthCellTemplate
   let-day="day"
   let-openDay="openDay"
@@ -31,7 +46,7 @@
   let-highlightDay="highlightDay"
   let-unhighlightDay="unhighlightDay"
   let-eventClicked="eventClicked"
-  let-tooltipTemplate="tooltipTemplate"
+  let-tooltipTemplate="customTooltipTemplate"
   let-tooltipAppendToBody="tooltipAppendToBody">
 
   <div class="cal-cell-top">
@@ -47,7 +62,7 @@
       [mwlCalendarTooltip]="event.title | calendarEventTitle:'monthTooltip':event"
       [tooltipPlacement]="tooltipPlacement"
       [tooltipEvent]="event"
-      [tooltipTemplate]="tooltipTemplate"
+      [tooltipTemplate]="customTooltipTemplate"
       [tooltipAppendToBody]="tooltipAppendToBody"
       (click)="$event.stopPropagation(); eventClicked.emit({event: event})">
     </div>
@@ -59,7 +74,7 @@
   let-weekEvent="weekEvent"
   let-tooltipPlacement="tooltipPlacement"
   let-eventClicked="eventClicked"
-  let-tooltipTemplate="tooltipTemplate"
+  let-tooltipTemplate="customTooltipTemplate"
   let-tooltipAppendToBody="tooltipAppendToBody">
 
   <div class="cal-event"
