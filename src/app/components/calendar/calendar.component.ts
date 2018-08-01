@@ -13,7 +13,6 @@ import {
 import { CalendarEvent } from 'angular-calendar';
 import { colors } from './cal-utils/colors';
 import * as scheduledata from '../../../assets/docs/schedule.json';
-import { FilterEventsPipe } from './cal-utils/filter-events.pipe';
 
 // TODO: Import EventColor interface instead of redefining
 interface EventColor {
@@ -39,6 +38,8 @@ export class CalendarComponent implements OnInit {
 
   searchText: string;
   locationSelect: string;
+  searchList: CalendarEvent[] = [];
+  locationList: CalendarEvent[] = [];
 
   schedule: ScheduleEntry[] = scheduledata.default;
 
@@ -47,8 +48,6 @@ export class CalendarComponent implements OnInit {
   viewDate: Date = new Date();  // Defaults to current date.
   calendarEvents: CalendarEvent[] = []; // Will change as filtered
   calendarEventsComplete: CalendarEvent[] = []; // Will not change
-
-  constructor(private filterEventsPipe: FilterEventsPipe) {}
 
   ngOnInit(): void {
     this.schedule.forEach(entry => {  // Loops through JSON entries
@@ -115,11 +114,37 @@ export class CalendarComponent implements OnInit {
   }
 
   onSearchChange(newSearch: string): void {
-    this.calendarEvents = this.filterEventsPipe.transform(this.calendarEventsComplete, newSearch, this.locationSelect);
+    if (!newSearch) {
+      this.searchList = this.calendarEventsComplete;
+    } else {
+      this.searchList = this.calendarEventsComplete.filter( it => {
+        return it.title.toLowerCase().includes(newSearch.toLowerCase());
+      });
+    }
+    this.createFilteredList();
   }
 
   onLocationSelect(newLocation: string): void {
     this.locationSelect = newLocation;
-    this.calendarEvents = this.filterEventsPipe.transform(this.calendarEventsComplete, this.searchText, newLocation);
+    if (!newLocation) {
+      this.locationList = this.calendarEventsComplete;
+    } else {
+      this.locationList = this.calendarEventsComplete.filter( it => {
+        return it.meta.location.toLowerCase().includes(newLocation.toLowerCase());
+      });
+    }
+    this.createFilteredList();
+  }
+
+  createFilteredList(): void {
+    if (this.searchText && this.locationSelect) {
+      this.calendarEvents = this.searchList.filter(value => -1 !== this.locationList.indexOf(value));
+    } else if (this.searchText && !this.locationSelect) {
+      this.calendarEvents = this.searchList;
+    } else if (!this.searchText && this.locationSelect) {
+      this.calendarEvents = this.locationList;
+    } else if (!this.searchText && !this.locationSelect) {
+      this.calendarEvents = this.calendarEventsComplete;
+    }
   }
 }

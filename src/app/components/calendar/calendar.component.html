@@ -16,7 +16,12 @@
       <mat-icon matPrefix color="accent">domain</mat-icon>
       <mat-select placeholder="Location" [ngModel]="locationSelect" (ngModelChange)="onLocationSelect($event)">
         <mat-option>All</mat-option>
-        <mat-option *ngFor="let location of calendarEventsComplete | filterLocations" [value]="location">{{location}}</mat-option>
+        <ng-container *ngIf="searchText">
+            <mat-option *ngFor="let location of searchList | filterLocations" [value]="location">{{location}}</mat-option>
+        </ng-container>
+        <ng-container *ngIf="!searchText">
+            <mat-option *ngFor="let location of calendarEventsComplete | filterLocations" [value]="location">{{location}}</mat-option>
+        </ng-container>
       </mat-select>
     </mat-form-field>
   </div>
@@ -54,7 +59,7 @@
   </div>
   <div class="cal-events" *ngIf="day.events.length > 0">
     <div class="cal-event"
-      *ngFor="let event of day.events | filterEvents : searchText"
+      *ngFor="let event of day.events"
       [style.backgroundColor]="event.color?.primary"
       [ngClass]="'sq-cal-event'"
       (mouseenter)="highlightDay.emit({event: event})"
@@ -83,15 +88,19 @@
     [mwlCalendarTooltip]="weekEvent.event.title | calendarEventTitle:'weekTooltip':weekEvent.event"
     [tooltipPlacement]="tooltipPlacement"
     [tooltipEvent]="weekEvent.event"
-    [tooltipTemplate]="tooltipTemplate"
+    [tooltipTemplate]="customTooltipTemplate"
     [tooltipAppendToBody]="tooltipAppendToBody">
     <mwl-calendar-event-actions [event]="weekEvent.event"></mwl-calendar-event-actions>
     &ngsp;
-    <mwl-calendar-event-title
-      [event]="weekEvent.event"
-      view="week"
-      (mwlClick)="eventClicked.emit()">
-    </mwl-calendar-event-title>
+    <strong>
+      <mwl-calendar-event-title
+        [event]="weekEvent.event"
+        view="week"
+        (mwlClick)="eventClicked.emit()">
+      </mwl-calendar-event-title>
+    </strong>
+    <span *ngIf="weekEvent.event.meta.location">: {{weekEvent.event.meta.location}}</span>
+    <span *ngIf="!weekEvent.event.meta.location">: unknown location</span>
   </div>
 </ng-template>
 
