@@ -27,3 +27,25 @@ app-calendar-utils-calendar-header{
     margin-right:2px;
   }
 }
+
+.rotate90{
+  writing-mode:vertical-lr;
+  text-align:center;
+  /*
+  transform: rotate(90deg);
+  transform-origin: left, top;
+  -ms-transform: rotate(90deg);
+  -ms-transform-origin:left, top;
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin:left, top;
+  */
+}
+
+.flex-center{
+  display:flex;
+  justify-content:center;
+}
+
+.cal-event{
+  cursor:pointer;
+}

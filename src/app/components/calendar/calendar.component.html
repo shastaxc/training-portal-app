@@ -27,6 +27,7 @@
   </div>
 </div>
 
+<!-- Custom template for tooltips (all views) -->
 <ng-template
     #customTooltipTemplate
     let-contents="contents"
@@ -42,6 +43,7 @@
     </div>
 </ng-template>
 
+<!-- Custom template for month-view day cells -->
 <ng-template
   #monthCellTemplate
   let-day="day"
@@ -74,6 +76,7 @@
   </div>
 </ng-template>
 
+<!-- Custom template for week-view events -->
 <ng-template
   #weekViewEventTemplate
   let-weekEvent="weekEvent"
@@ -81,6 +84,22 @@
   let-eventClicked="eventClicked"
   let-tooltipTemplate="customTooltipTemplate"
   let-tooltipAppendToBody="tooltipAppendToBody">
+
+  <!-- Custom template for event title -->
+  <ng-template
+    #weekViewEventTitle
+    let-event="event"
+    let-view="view">
+    <a
+      class="cal-event-title"
+      [style.font-size.em]="1.2"
+      href="javascript:;">
+
+      <strong>{{event.title}}</strong>
+      <span *ngIf="event.meta.location">: {{event.meta.location}}</span>
+      <span *ngIf="!event.meta.location">: unknown location</span>
+    </a>
+  </ng-template>
 
   <div class="cal-event"
     [style.backgroundColor]="weekEvent.event.color?.secondary"
@@ -92,15 +111,60 @@
     [tooltipAppendToBody]="tooltipAppendToBody">
     <mwl-calendar-event-actions [event]="weekEvent.event"></mwl-calendar-event-actions>
     &ngsp;
-    <strong>
+    <mwl-calendar-event-title
+      [event]="weekEvent.event"
+      view="week"
+      [customTemplate]="weekViewEventTitle"
+      (mwlClick)="eventClicked.emit()">
+    </mwl-calendar-event-title>
+  </div>
+</ng-template>
+
+<!-- Custom template for day-view events -->
+<ng-template
+  #dayViewEventTemplate
+  let-dayEvent="dayEvent"
+  let-tooltipPlacement="tooltipPlacement"
+  let-eventClicked="eventClicked"
+  let-tooltipTemplate="customTooltipTemplate"
+  let-tooltipAppendToBody="tooltipAppendToBody">
+
+  <!-- Custom template for event title -->
+  <ng-template
+    #dayViewEventTitle
+    let-event="event"
+    let-view="view">
+    <a
+      class="cal-event-title rotate90"
+      [style.font-size.em]="1.2"
+      href="javascript:;">
+
+      <strong>{{event.title}}</strong>
+      <span *ngIf="event.meta.location">: {{event.meta.location}}</span>
+      <span *ngIf="!event.meta.location">: unknown location</span>
+    </a>
+  </ng-template>
+
+  <div
+    class="cal-event flex-center"
+    [style.backgroundColor]="dayEvent.event.color?.secondary"
+    [style.borderColor]="dayEvent.event.color?.primary"
+    [mwlCalendarTooltip]="dayEvent.event.title | calendarEventTitle:'dayTooltip':dayEvent.event"
+    [tooltipPlacement]="tooltipPlacement"
+    [tooltipEvent]="dayEvent.event"
+    [tooltipTemplate]="customTooltipTemplate"
+    [tooltipAppendToBody]="tooltipAppendToBody">
+
+    <mwl-calendar-event-actions [event]="dayEvent.event"></mwl-calendar-event-actions>
+    &ngsp;
+    <div>
       <mwl-calendar-event-title
-        [event]="weekEvent.event"
-        view="week"
+        [event]="dayEvent.event"
+        [customTemplate]="dayViewEventTitle"
+        view="day"
         (mwlClick)="eventClicked.emit()">
       </mwl-calendar-event-title>
-    </strong>
-    <span *ngIf="weekEvent.event.meta.location">: {{weekEvent.event.meta.location}}</span>
-    <span *ngIf="!weekEvent.event.meta.location">: unknown location</span>
+    </div>
   </div>
 </ng-template>
 
@@ -123,6 +187,8 @@
     *ngSwitchCase="'day'"
     [viewDate]="viewDate"
     [events]="calendarEvents"
+    [eventTemplate]="dayViewEventTemplate"
+    [eventWidth]="30"
     (eventClicked)="eventClicked($event)">
   </mwl-calendar-day-view>
 </div>
