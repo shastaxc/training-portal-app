@@ -46,6 +46,17 @@ app-calendar-utils-calendar-header{
   justify-content:center;
 }
 
+// ============ Overrides ============
+
 .cal-event{
   cursor:pointer;
+}
+
+.cal-cell-top{
+  min-height:0;
+  flex: none;
+}
+
+.cal-events{
+  margin:1px;
 }
