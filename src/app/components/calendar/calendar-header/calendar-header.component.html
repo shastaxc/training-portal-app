@@ -1,7 +1,7 @@
 <div class="nav-btn-grp">
   <button mat-flat-button
     mwlCalendarPreviousView
-    [view]="view"
+    [view]="(view === 'alt-month' ? 'month' : view)"
     [(viewDate)]="viewDate"
     (viewDateChange)="viewDateChange.next(viewDate)">
     Previous
@@ -15,7 +15,7 @@
   </button>
   <button mat-flat-button
     mwlCalendarNextView
-    [view]="view"
+    [view]="(view === 'alt-month' ? 'month' : view)"
     [(viewDate)]="viewDate"
     (viewDateChange)="viewDateChange.next(viewDate)">
     Next
@@ -23,7 +23,7 @@
 </div>
 
 <div class="title-grp">
-  <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):locale }}</h3>
+  <h3>{{ viewDate | calendarDate:((view === 'alt-month' ? 'month' : view) + 'ViewTitle'):locale }}</h3>
 </div>
 
 <div class="view-btn-grp">
@@ -31,6 +31,11 @@
     (click)="viewChange.emit('month')"
     [class.active]="view === 'month'">
     Month
+  </button>
+  <button mat-flat-button
+    (click)="viewChange.emit('alt-month')"
+    [class.active]="view === 'alt-month'">
+    Alt Month
   </button>
   <button mat-flat-button
     (click)="viewChange.emit('week')"
