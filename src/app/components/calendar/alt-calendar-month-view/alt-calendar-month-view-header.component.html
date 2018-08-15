@@ -5,14 +5,14 @@
   <div class="cal-cell-row cal-header">
     <div
       class="cal-cell"
-      *ngFor="let day of days; trackBy:trackByWeekDayHeaderDate"
+      *ngFor="let day of days"
       [class.cal-past]="day.isPast"
       [class.cal-today]="day.isToday"
       [class.cal-future]="day.isFuture"
       [class.cal-weekend]="day.isWeekend"
       [ngClass]="day.cssClass">
 
-      {{ day.date | calendarDate:'monthViewColumnHeader':locale }}
+      {{ day.date | calendarDate:'monthViewDayNumber':locale }}
     </div>
   </div>
 </ng-template>

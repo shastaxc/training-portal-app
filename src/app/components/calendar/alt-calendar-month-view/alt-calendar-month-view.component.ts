@@ -5,7 +5,8 @@ import { validateEvents, trackByIndex } from 'angular-calendar/modules/common/ut
 import { Subject, Subscription } from 'rxjs';
 import { CalendarEventTimesChangedEvent } from 'angular-calendar/modules/common/calendar-event-times-changed-event.interface';
 import { CalendarUtils } from 'angular-calendar/modules/common/calendar-utils.provider';
-import { getDate, getMonth, getYear, setDate, setMonth, setYear, isSameDay, differenceInSeconds, addSeconds } from 'date-fns';
+import { getDate, getMonth, getYear, setDate, setMonth, setYear, startOfDay,
+  isSameDay, differenceInSeconds, addSeconds, startOfMonth, endOfMonth } from 'date-fns';
 
 export interface CalendarMonthViewBeforeRenderEvent {
     header: WeekDay[];
@@ -222,19 +223,43 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
       excluded: this.excludeDays,
       weekendDays: this.weekendDays
     });
+    this.view.period.start = startOfMonth(this.viewDate);
+    this.view.period.end = endOfMonth(this.viewDate);
+    let iStartDay: number;
+    let iEndDay: number;
+    this.view.days.forEach((day, index): void => {
+      if (startOfDay(day.date).getTime() === startOfDay(this.view.period.start).getTime()) {
+        iStartDay = index;
+      }
+      if (startOfDay(day.date).getTime() === startOfDay(this.view.period.end).getTime()) {
+        iEndDay = index;
+      }
+    });
+    this.view.days = this.view.days.slice(iStartDay, iEndDay + 1);
+    const newEvents: CalendarEvent[] = [];
+    this.view.period.events.forEach(event => {
+      // event duration overlaps period if:
+      if ((this.view.period.start >= event.start && this.view.period.start <= event.end)
+          || (event.start >= this.view.period.start && event.start <= this.view.period.end)) {
+        newEvents.push(event);
+      }
+    });
+    this.view.period.events = newEvents;
+    console.log(this.view.period.events);
+
     this.emitBeforeViewRender();
   }
 
   private checkActiveDayIsOpen() {
     const _this = this;
     if (this.activeDayIsOpen === true) {
-        this.openDay = this.view.days.find(function (day) {
-            return isSameDay(day.date, _this.viewDate);
-        });
-        const index = this.view.days.indexOf(this.openDay);
-        this.openRowIndex =
-            Math.floor(index / this.view.totalDaysVisibleInWeek) *
-                this.view.totalDaysVisibleInWeek;
+      this.openDay = this.view.days.find(function (day) {
+        return isSameDay(day.date, _this.viewDate);
+      });
+      const index = this.view.days.indexOf(this.openDay);
+      this.openRowIndex =
+        Math.floor(index / this.view.totalDaysVisibleInWeek) *
+          this.view.totalDaysVisibleInWeek;
     }
     else {
         this.openRowIndex = null;
