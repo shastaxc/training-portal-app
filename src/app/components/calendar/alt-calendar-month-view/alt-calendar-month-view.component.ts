@@ -1,12 +1,41 @@
 import { OnChanges, EventEmitter, ChangeDetectorRef, OnInit, OnDestroy, TemplateRef,
   Component, Input, Output, Inject, LOCALE_ID } from '@angular/core';
-import { CalendarEvent, WeekDay, MonthView, MonthViewDay, ViewPeriod } from 'calendar-utils';
+import { CalendarEvent, WeekDay, MonthView, MonthViewDay, ViewPeriod, getEventsInPeriod, DAYS_OF_WEEK  } from 'calendar-utils';
 import { validateEvents, trackByIndex } from 'angular-calendar/modules/common/util';
 import { Subject, Subscription } from 'rxjs';
 import { CalendarEventTimesChangedEvent } from 'angular-calendar/modules/common/calendar-event-times-changed-event.interface';
 import { CalendarUtils } from 'angular-calendar/modules/common/calendar-utils.provider';
 import { getDate, getMonth, getYear, setDate, setMonth, setYear, startOfDay,
-  isSameDay, differenceInSeconds, addSeconds, startOfMonth, endOfMonth } from 'date-fns';
+  isSameDay, differenceInSeconds, addSeconds, startOfMonth, endOfMonth, addHours,
+  endOfDay, getDay, isSameMonth, differenceInDays } from 'date-fns';
+
+const DEFAULT_WEEKEND_DAYS = [
+    DAYS_OF_WEEK.SUNDAY,
+    DAYS_OF_WEEK.SATURDAY
+];
+const DAYS_IN_WEEK = 7;
+const HOURS_IN_DAY = 24;
+
+export interface AltMonthView extends MonthView {
+  /**
+   * from MonthView:
+   *    rowOffsets: number[];
+   *    days: MonthViewDay[]; // Contains inMonth: boolean (true if start of event period is in current view month)
+   *    totalDaysVisibleInWeek: number;
+   *    period: ViewPeriod;
+   */
+  eventRows: AltMonthViewEventRow[];
+}
+  export interface AltMonthViewEventRow {
+    row: AltMonthViewEvent[];
+  }
+    export interface AltMonthViewEvent {
+      event: CalendarEvent;
+      offset: number; // Number of seconds between start of event and start of month
+      span: number; // Duration of event display in seconds
+      startsBeforeMonth: boolean; // True if event start < month start
+      endsAfterMonth: boolean; // True if event end > month end
+    }
 
 export interface CalendarMonthViewBeforeRenderEvent {
     header: WeekDay[];
@@ -45,7 +74,6 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
   @Input() weekStartsOn: number; // The start number of the week
   @Input() headerTemplate: TemplateRef<any>; // A custom template to use to replace the header
   @Input() cellTemplate: TemplateRef<any>; // A custom template to use to replace the day cell
-  @Input() openDayEventsTemplate: TemplateRef<any>;  // A custom template to use for the slide down box of events for the active day
   @Input() eventTitleTemplate: TemplateRef<any>; // A custom template to use for event titles
   @Input() weekendDays: number[];  // An array of day indexes (0 = sunday, 1 = monday etc) that indicate which days are weekends
   /**
@@ -68,7 +96,7 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
   /**
    * @hidden
    */
-  view: MonthView;
+  view: AltMonthView;
   /**
    * @hidden
    */
@@ -216,36 +244,7 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
   }
 
   private refreshBody() {
-    this.view = this.utils.getMonthView({
-      events: this.events,
-      viewDate: this.viewDate,
-      weekStartsOn: this.weekStartsOn,
-      excluded: this.excludeDays,
-      weekendDays: this.weekendDays
-    });
-    this.view.period.start = startOfMonth(this.viewDate);
-    this.view.period.end = endOfMonth(this.viewDate);
-    let iStartDay: number;
-    let iEndDay: number;
-    this.view.days.forEach((day, index): void => {
-      if (startOfDay(day.date).getTime() === startOfDay(this.view.period.start).getTime()) {
-        iStartDay = index;
-      }
-      if (startOfDay(day.date).getTime() === startOfDay(this.view.period.end).getTime()) {
-        iEndDay = index;
-      }
-    });
-    this.view.days = this.view.days.slice(iStartDay, iEndDay + 1);
-    const newEvents: CalendarEvent[] = [];
-    this.view.period.events.forEach(event => {
-      // event duration overlaps period if:
-      if ((this.view.period.start >= event.start && this.view.period.start <= event.end)
-          || (event.start >= this.view.period.start && event.start <= this.view.period.end)) {
-        newEvents.push(event);
-      }
-    });
-    this.view.period.events = newEvents;
-    console.log(this.view.period.events);
+    this.view = this.getAltMonthView();
 
     this.emitBeforeViewRender();
   }
@@ -285,4 +284,90 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
     }
   }
 
+  private getAltMonthView(): AltMonthView {
+    const _b = this.events;
+    let events = _b === void 0 ? [] : _b;
+    const _c = this.excludeDays;
+    const excluded = _c === void 0 ? [] : _c;
+
+    if (!events) {
+      events = [];
+    }
+    const start = startOfMonth(this.viewDate);
+    const end = endOfMonth(this.viewDate);
+    const eventsInMonth = getEventsInPeriod({
+      events: events,
+      periodStart: start,
+      periodEnd: end
+    });
+    const initialViewDays = [];
+    let previousDate;
+    const _loop_3 = () => {
+      // hacky fix for https://github.com/mattlewis92/angular-calendar/issues/173
+      let date;
+      if (previousDate) {
+        date = startOfDay(addHours(previousDate, HOURS_IN_DAY));
+        if (previousDate.getTime() === date.getTime()) {
+          // DST change, so need to add 25 hours
+          date = startOfDay(addHours(previousDate, HOURS_IN_DAY + 1));
+        }
+        previousDate = date;
+      }
+      else {
+        date = previousDate = start;
+      }
+      if (!excluded.some(e => (date.getDay() === e) ? true : false)) {
+        const today = startOfDay(new Date());
+        const eventsInPeriod = getEventsInPeriod({
+          events: eventsInMonth,
+          periodStart: startOfDay(date),
+          periodEnd: endOfDay(date)
+        });
+        const day = {
+          date: date,
+          isPast: date < today,
+          isToday: isSameDay(date, today),
+          isFuture: date > today,
+          isWeekend: (this.weekendDays === void 0 ? DEFAULT_WEEKEND_DAYS : this.weekendDays).indexOf(getDay(date)) > -1,
+          inMonth: isSameMonth(date, this.viewDate),
+          events: eventsInPeriod,
+          badgeTotal: eventsInPeriod.length
+        };
+        initialViewDays.push(day);
+      }
+    };
+    for (let i = 0; i < differenceInDays(end, start) + 1; i++) {
+      _loop_3();
+    }
+    let days = [];
+    const totalDaysVisibleInWeek = DAYS_IN_WEEK - excluded.length;
+    if (totalDaysVisibleInWeek < DAYS_IN_WEEK) {
+      for (let i = 0; i < initialViewDays.length; i += totalDaysVisibleInWeek) {
+        const row = initialViewDays.slice(i, i + totalDaysVisibleInWeek);
+        const isRowInMonth = row.some(function (day) { return day.date.getMonth() === this.viewDate.getMonth(); });
+        if (isRowInMonth) {
+          days = days.concat(row);
+        }
+      }
+    }
+    else {
+      days = initialViewDays;
+    }
+    const rows = Math.ceil(days.length / totalDaysVisibleInWeek);
+    const rowOffsets = [];
+    for (let i = 0; i < rows; i++) {
+      rowOffsets.push(i * totalDaysVisibleInWeek);
+    }
+    return {
+      rowOffsets: rowOffsets,
+      totalDaysVisibleInWeek: totalDaysVisibleInWeek,
+      days: days,
+      period: {
+        start: start,
+        end: end,
+        events: eventsInMonth
+      },
+      eventRows: []
+    };
+  }
 }
