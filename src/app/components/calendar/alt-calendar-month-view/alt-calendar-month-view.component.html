@@ -1,34 +1,27 @@
-<div class="cal-month-view">
+<div class="cal-alt-month-view">
   <app-alt-calendar-month-view-header
     [days]="view.days"
     [locale]="locale"
     [customTemplate]="headerTemplate">
   </app-alt-calendar-month-view-header>
 
-  <div class="cal-days">
-    <div *ngFor="let rowIndex of view.rowOffsets; trackByIndex">
-      <div class="cal-cell-row">
-        <app-alt-calendar-month-cell
-          *ngFor="let day of (view.days | slice : rowIndex : rowIndex + (view.totalDaysVisibleInWeek)); trackBy:trackByDate"
-          [class.cal-drag-over]="day.dragOver"
-          [ngClass]="day?.cssClass"
-          [day]="day"
-          [openDay]="openDay"
-          [locale]="locale"
-          [tooltipPlacement]="tooltipPlacement"
-          [tooltipAppendToBody]="tooltipAppendToBody"
-          [tooltipTemplate]="tooltipTemplate"
-          [customTemplate]="cellTemplate"
-          (click)="handleDayClick($event, day)"
-          (highlightDay)="toggleDayHighlight($event.event, true)"
-          (unhighlightDay)="toggleDayHighlight($event.event, false)"
-          app-altDroppable
-          (dragEnter)="day.dragOver = true"
-          (dragLeave)="day.dragOver = false"
-          (drop)="day.dragOver = false; eventDropped(day, $event.dropData.event)"
-          (eventClicked)="eventClicked.emit({event: $event.event})">
-        </app-alt-calendar-month-cell>
-      </div>
+  <div *ngFor="let eventRow of view.eventRows; trackBy:trackByIndex" #eventRowContainer class="cal-events-row">
+    <div
+      *ngFor="let altMonthEvent of eventRow.row; trackBy:trackByEventId"
+      #event
+      class="cal-event-container"
+      [ngClass]="altMonthEvent.event?.cssClass"
+      [style.width]="((100 / view.days.length) * altMonthEvent.span) + '%'"
+      [style.marginLeft]="((100 / view.days.length) * altMonthEvent.offset) + '%'">
+      <app-alt-calendar-month-view-event
+        [altMonthEvent]="altMonthEvent"
+        [tooltipPlacement]="tooltipPlacement"
+        [tooltipTemplate]="tooltipTemplate"
+        [tooltipAppendToBody]="tooltipAppendToBody"
+        [customTemplate]="eventTemplate"
+        [eventTitleTemplate]="eventTitleTemplate"
+        (eventClicked)="eventClicked.emit({event: altMonthEvent.event})">
+      </app-alt-calendar-month-view-event>
     </div>
   </div>
 </div>

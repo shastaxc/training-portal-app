@@ -11,7 +11,7 @@ import { CalendarUtils } from 'angular-calendar/modules/common/calendar-utils.pr
 
 import { CalendarHeaderComponent } from '../calendar-header/calendar-header.component';
 import { AltCalendarMonthViewHeaderComponent } from '../alt-calendar-month-view/alt-calendar-month-view-header.component';
-import { AltCalendarMonthCellComponent } from '../alt-calendar-month-view/alt-calendar-month-cell.component';
+import { AltCalendarMonthViewEventComponent } from '../alt-calendar-month-view/alt-calendar-month-view-event.component';
 import { AltCalendarMonthViewComponent } from '../alt-calendar-month-view/alt-calendar-month-view.component';
 
 import { FilterLocationsPipe } from './filter-locations.pipe';
@@ -27,14 +27,14 @@ import { FilterLocationsPipe } from './filter-locations.pipe';
   declarations: [
     CalendarHeaderComponent,
     FilterLocationsPipe,
-    AltCalendarMonthCellComponent,
+    AltCalendarMonthViewEventComponent,
     AltCalendarMonthViewHeaderComponent,
     AltCalendarMonthViewComponent
   ],
   exports: [
     CalendarHeaderComponent,
     FilterLocationsPipe,
-    AltCalendarMonthCellComponent,
+    AltCalendarMonthViewEventComponent,
     AltCalendarMonthViewHeaderComponent,
     AltCalendarMonthViewComponent
   ],

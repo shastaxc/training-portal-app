@@ -1,0 +1,72 @@
+<!-- Custom template for event title -->
+<ng-template
+  #altMonthViewEventTitle
+  let-event="event"
+  let-view="view">
+  <a
+    class="cal-event-title"
+    [style.font-size.em]="1.2"
+    href="javascript:;">
+
+    <strong>{{event.title}}</strong>
+    <span *ngIf="event.meta.location">: {{event.meta.location}}</span>
+    <span *ngIf="!event.meta.location">: unknown location</span>
+  </a>
+</ng-template>
+
+<!-- Custom template for tooltips (all views) -->
+<ng-template
+    #altMonthTooltipTemplate
+    let-contents="contents"
+    let-placement="placement"
+    let-event="event">
+
+    <div class="cal-tooltip" [ngClass]="'cal-tooltip-' + placement">
+        <div class="cal-tooltip-arrow"></div>
+        <div class="cal-tooltip-inner">
+          <strong>{{event.title}}</strong>
+          <span *ngIf="event.meta.location"><br />{{event.meta.location}}</span>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template
+  #defaultTemplate
+  let-altMonthEvent="altMonthEvent"
+  let-tooltipPlacement="tooltipPlacement"
+  let-eventClicked="eventClicked"
+  let-tooltipTemplate="altMonthTooltipTemplate"
+  let-tooltipAppendToBody="tooltipAppendToBody">
+
+  <div
+    class="cal-event"
+    [class.cal-starts-within-month]="!altMonthEvent.startsBeforeMonth"
+    [class.cal-ends-within-month]="!altMonthEvent.endsAfterMonth"
+    [style.backgroundColor]="altMonthEvent.event.color?.secondary"
+    [style.borderColor]="altMonthEvent.event.color?.primary"
+    [mwlCalendarTooltip]="altMonthEvent.event.title | calendarEventTitle:'weekTooltip':altMonthEvent.event"
+    [tooltipPlacement]="tooltipPlacement"
+    [tooltipEvent]="altMonthEvent.event"
+    [tooltipTemplate]="altMonthTooltipTemplate"
+    [tooltipAppendToBody]="tooltipAppendToBody">
+    <mwl-calendar-event-actions [event]="altMonthEvent.event"></mwl-calendar-event-actions>
+    &ngsp;
+    <mwl-calendar-event-title
+      [event]="altMonthEvent.event"
+      [customTemplate]="altMonthViewEventTitle"
+      view="week"
+      (mwlClick)="eventClicked.emit()">
+    </mwl-calendar-event-title>
+  </div>
+</ng-template>
+
+<ng-template
+  [ngTemplateOutlet]="customTemplate || defaultTemplate"
+  [ngTemplateOutletContext]="{
+    altMonthEvent: altMonthEvent,
+    tooltipPlacement: tooltipPlacement,
+    eventClicked: eventClicked,
+    tooltipTemplate: tooltipTemplate,
+    tooltipAppendToBody: tooltipAppendToBody
+  }">
+</ng-template>

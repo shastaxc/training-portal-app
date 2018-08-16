@@ -53,45 +53,45 @@ export interface CalendarWeekViewBeforeRenderEvent {
 export class AppCalendarWeekViewComponent implements OnChanges, OnInit, OnDestroy {
   private cdr;
   private utils;
-  viewDate: Date; // The current view date
-  events: CalendarEvent[];  // An array of events to display on view
-  excludeDays: number[];  // An array of day indexes (0 = sunday, 1 = monday etc) that will be hidden on the view
-  refresh: Subject<any>;  // An observable that when emitted on will re-render the current view
-  locale: string; // The locale used to format dates
-  tooltipPlacement: string; // The placement of the event tooltip
-  tooltipTemplate: TemplateRef<any>;  // A custom template to use for the event tooltips
-  tooltipAppendToBody: boolean; // Whether to append tooltips to the body or next to the trigger element
-  weekStartsOn: number; // The start number of the week
-  headerTemplate: TemplateRef<any>; // A custom template to use to replace the header
-  eventTemplate: TemplateRef<any>;  // A custom template to use for week view events
-  eventTitleTemplate: TemplateRef<any>; // A custom template to use for event titles
+  @Input() viewDate: Date; // The current view date
+  @Input() events: CalendarEvent[];  // An array of events to display on view
+  @Input() excludeDays: number[];  // An array of day indexes (0 = sunday, 1 = monday etc) that will be hidden on the view
+  @Input() refresh: Subject<any>;  // An observable that when emitted on will re-render the current view
+  @Input() locale: string; // The locale used to format dates
+  @Input() tooltipPlacement: string; // The placement of the event tooltip
+  @Input() tooltipTemplate: TemplateRef<any>;  // A custom template to use for the event tooltips
+  @Input() tooltipAppendToBody: boolean; // Whether to append tooltips to the body or next to the trigger element
+  @Input() weekStartsOn: number; // The start number of the week
+  @Input() headerTemplate: TemplateRef<any>; // A custom template to use to replace the header
+  @Input() eventTemplate: TemplateRef<any>;  // A custom template to use for week view events
+  @Input() eventTitleTemplate: TemplateRef<any>; // A custom template to use for event titles
   /**
    * The precision to display events.
    * `days` will round event start and end dates to the nearest day and `minutes` will not do this rounding
    */
-  precision: 'days' | 'minutes';
-  weekendDays: number[];  // An array of day indexes (0 = sunday, 1 = monday etc) that indicate which days are weekends
+  @Input() precision: 'days' | 'minutes';
+  @Input() weekendDays: number[];  // An array of day indexes (0 = sunday, 1 = monday etc) that indicate which days are weekends
   /**
    * Called when a header week day is clicked. Adding a `cssClass` property on `$event.day` will add that class to the header element
    */
-  dayHeaderClicked: EventEmitter<{
+  @Output() dayHeaderClicked: EventEmitter<{
       day: WeekDay;
   }>;
   /**
    * Called when the event title is clicked
    */
-  eventClicked: EventEmitter<{
+  @Output() eventClicked: EventEmitter<{
       event: CalendarEvent;
   }>;
   /**
    * Called when an event is resized or dragged and dropped
    */
-  eventTimesChanged: EventEmitter<CalendarEventTimesChangedEvent>;
+  @Output() eventTimesChanged: EventEmitter<CalendarEventTimesChangedEvent>;
   /**
    * An output that will be called before the view is rendered for the current week.
    * If you add the `cssClass` property to a day in the header it will add that class to the cell element in the template
    */
-  beforeViewRender: EventEmitter<CalendarWeekViewBeforeRenderEvent>;
+  @Output() beforeViewRender: EventEmitter<CalendarWeekViewBeforeRenderEvent>;
   /**
    * @hidden
    */

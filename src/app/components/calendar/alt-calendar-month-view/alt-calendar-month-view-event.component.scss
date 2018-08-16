@@ -1,0 +1,31 @@
+.cal-event {
+  padding: 0 10px;
+  font-size: 12px;
+  margin-left: 2px;
+  margin-right: 2px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #d1e8ff;
+  border: 1px solid #1e90ff;
+  color: #1e90ff;
+}
+
+.cal-event-title:link {
+  color: currentColor;
+}
+
+.cal-event {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cal-starts-within-month.cal-event {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.cal-ends-within-month.cal-event {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

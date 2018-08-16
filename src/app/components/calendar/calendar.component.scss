@@ -48,15 +48,15 @@ app-calendar-utils-calendar-header{
 
 // ============ Overrides ============
 
-.cal-event{
-  cursor:pointer;
-}
-
-.cal-cell-top{
-  min-height:0;
-  flex: none;
-}
-
-.cal-events{
-  margin:1px;
+.cal-month-view{
+  .cal-event{
+    cursor:pointer;
+  }
+  .cal-cell-top{
+    min-height:0;
+    flex: none;
+  }
+  .cal-events{
+    margin:1px;
+  }
 }
