@@ -185,6 +185,7 @@
     (eventClicked)="eventClicked($event)">
   </app-alt-calendar-month-view>
   <!-- Week View -->
+<!-- Hiding Week View pending deletion
   <mwl-calendar-week-view
     *ngSwitchCase="'week'"
     [viewDate]="viewDate"
@@ -192,7 +193,9 @@
     (eventClicked)="eventClicked($event)"
     [eventTemplate]="weekViewEventTemplate">
   </mwl-calendar-week-view>
+-->
   <!-- Day View -->
+<!-- Hiding Day View pending deletion
   <mwl-calendar-day-view
     *ngSwitchCase="'day'"
     [viewDate]="viewDate"
@@ -201,5 +204,6 @@
     [eventWidth]="30"
     (eventClicked)="eventClicked($event)">
   </mwl-calendar-day-view>
+-->
   <!-- TODO: Insert event detail view -->
 </div>
