@@ -1,24 +1,18 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import {
-  getMonth,
   startOfMonth,
   startOfWeek,
   startOfDay,
   endOfMonth,
   endOfWeek,
   endOfDay,
-  subDays,
-  addDays
 } from 'date-fns';
 import { CalendarEvent } from 'angular-calendar';
 import { colors } from './cal-utils/colors';
-import * as scheduledata from '../../../assets/docs/schedule.json';
-
-// TODO: Import EventColor interface instead of redefining
-interface EventColor {
-  primary: string;
-  secondary: string;
-}
+import { EventColor } from 'calendar-utils';
+import * as scheduledata from 'assets/docs/schedule.json';
+import { MatDialog } from '@angular/material';
+import { EventDialogComponent } from '../event-dialog/event-dialog.component';
 
 interface ScheduleEntry {
   title: string;
@@ -36,6 +30,7 @@ interface ScheduleEntry {
 })
 export class CalendarComponent implements OnInit {
 
+  constructor(private dialog: MatDialog) {}
   searchText: string;
   locationSelect: string;
   searchList: CalendarEvent[] = [];
@@ -146,5 +141,12 @@ export class CalendarComponent implements OnInit {
     } else if (!this.searchText && !this.locationSelect) {
       this.calendarEvents = this.calendarEventsComplete;
     }
+  }
+
+  openModal(id: string) {
+    // tslint:disable-next-line:prefer-const
+    let dialogRef = this.dialog.open(EventDialogComponent, {
+      data: {filename: id}
+    });
   }
 }
