@@ -330,10 +330,10 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
       periodStart: viewStart,
       periodEnd: viewEnd
     });
+
     const initialViewDays = [];
     let previousDate;
-    let eventsInPeriod;
-    const _loop_3 = () => {
+    for (let i = 0; i < differenceInDays(viewEnd, viewStart) + 1; i++) {
       // hacky fix for https://github.com/mattlewis92/angular-calendar/issues/173
       let date;
       if (previousDate) {
@@ -349,7 +349,7 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
       }
       if (!excluded.some(e => (date.getDay() === e))) {
         const today = startOfDay(new Date());
-        eventsInPeriod = getEventsInPeriod({
+        const eventsInDay = getEventsInPeriod({
           events: eventsInMonth,
           periodStart: startOfDay(date),
           periodEnd: endOfDay(date)
@@ -361,16 +361,13 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
           isFuture: date > today,
           isWeekend: weekendDays.indexOf(getDay(date)) > -1,
           inMonth: isSameMonth(date, viewDate),
-          events: eventsInPeriod,
-          badgeTotal: eventsInPeriod.length
+          events: eventsInDay,
+          badgeTotal: eventsInDay.length
         };
         initialViewDays.push(day);
       }
-    };
-
-    for (let i = 0; i < differenceInDays(viewEnd, viewStart) + 1; i++) {
-      _loop_3();
     }
+
     let days = [];
     const totalDaysVisibleInWeek = DAYS_IN_WEEK - excluded.length;
     if (totalDaysVisibleInWeek < DAYS_IN_WEEK) {
@@ -397,6 +394,11 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
 
     const maxRange = days.length - excluded.length;
     const absolutePositionedEvents = true;
+    const eventsInPeriod = getEventsInPeriod({
+      events: events,
+      periodStart: viewStart,
+      periodEnd: viewEnd
+  });
     const eventsMapped = eventsInPeriod
       .map(event => {
             const offset = this.getAltMonthViewEventOffset({
@@ -432,8 +434,6 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
               }
               return startSecondsDiff;
       });
-    // eventsMapped is not populating
-    // console.log(eventsMapped);
 
     const eventRows = [];
     const allocatedEvents = [];
@@ -462,7 +462,6 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
         });
       }
     });
-    console.log(eventRows);
 
     return {
       rowOffsets: rowOffsets,
@@ -512,7 +511,12 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
     return offset / SECONDS_IN_DAY;
   }
 
-  private getExcludedSeconds(_a) {
+  private getExcludedSeconds(_a: {
+                                startDate: Date,
+                                seconds: number,
+                                excluded: number[],
+                                precision?: 'minutes' | 'days'
+                              }): number {
     const startDate = _a.startDate,
     seconds = _a.seconds,
     excluded = _a.excluded,
@@ -547,7 +551,14 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
     return result;
   }
 
-  private calculateExcludedSeconds(_a) {
+  private calculateExcludedSeconds(_a: {
+                                    precision: 'minutes' | 'days',
+                                    day: number,
+                                    dayStart: number,
+                                    dayEnd: number,
+                                    startDate: Date,
+                                    endDate: Date
+                                  }): number {
     const precision = _a.precision,
     day = _a.day,
     dayStart = _a.dayStart,
@@ -566,7 +577,14 @@ export class AltCalendarMonthViewComponent implements OnChanges, OnInit, OnDestr
     return SECONDS_IN_DAY;
   }
 
-  private getAltMonthViewEventSpan(_a) {
+  private getAltMonthViewEventSpan(_a: {
+                                      event: CalendarEvent,
+                                      offset: number,
+                                      startOfMonth: Date,
+                                      excluded: number[],
+                                      precision?: 'minutes' | 'days',
+                                      SECONDS_IN_MONTH: number
+                                    }): number {
     const event = _a.event,
     offset = _a.offset,
     startOfViewDate = _a.startOfMonth,
