@@ -15,7 +15,6 @@ import { MaterialModule } from './modules/material.module';
 
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { CalendarListComponent } from './components/calendar-list/calendar-list.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginMenuComponent } from './components/login-menu/login-menu.component';
 import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
@@ -94,7 +93,6 @@ import { AuthService } from './services/auth.service';
     CurrentOpsComponent,
     UsmapComponent,
     ClosedOpsComponent,
-    CalendarListComponent,
     CalendarComponent
   ],
   imports: [
