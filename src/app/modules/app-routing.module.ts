@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsmapComponent } from '../components/usmap/usmap.component';
-import { WorldmapComponent } from '../components/worldmap/worldmap.component';
 import { AccountComponent } from '../pages/account/account.component';
 import { SettingsComponent } from '../pages/settings/settings.component';
 import { NotFoundComponent } from '../pages/not-found/not-found.component';

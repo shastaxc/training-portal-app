@@ -3,15 +3,14 @@
   #altMonthViewEventTitle
   let-event="event"
   let-view="view">
-  <a
+  <span
     class="cal-event-title"
-    [style.font-size.em]="1.2"
-    href="javascript:;">
+    [style.font-size.em]="1.2">
 
     <strong>{{event.title}}</strong>
     <span *ngIf="event.meta.location">: {{event.meta.location}}</span>
     <span *ngIf="!event.meta.location">: unknown location</span>
-  </a>
+</span>
 </ng-template>
 
 <!-- Custom template for tooltips (all views) -->
@@ -48,14 +47,14 @@
     [tooltipPlacement]="tooltipPlacement"
     [tooltipEvent]="altMonthEvent.event"
     [tooltipTemplate]="altMonthTooltipTemplate"
-    [tooltipAppendToBody]="tooltipAppendToBody">
+    [tooltipAppendToBody]="tooltipAppendToBody"
+    (click)="$event.stopPropagation(); eventClicked.emit({event: event})">
     <mwl-calendar-event-actions [event]="altMonthEvent.event"></mwl-calendar-event-actions>
     &ngsp;
     <mwl-calendar-event-title
       [event]="altMonthEvent.event"
       [customTemplate]="altMonthViewEventTitle"
-      view="week"
-      (mwlClick)="eventClicked.emit()">
+      view="week">
     </mwl-calendar-event-title>
   </div>
 </ng-template>

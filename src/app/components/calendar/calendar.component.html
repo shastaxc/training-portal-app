@@ -108,7 +108,8 @@
     [tooltipPlacement]="tooltipPlacement"
     [tooltipEvent]="weekEvent.event"
     [tooltipTemplate]="customTooltipTemplate"
-    [tooltipAppendToBody]="tooltipAppendToBody">
+    [tooltipAppendToBody]="tooltipAppendToBody"
+    (click)="$event.stopPropagation(); eventClicked.emit({event: event})">
     <mwl-calendar-event-actions [event]="weekEvent.event"></mwl-calendar-event-actions>
     &ngsp;
     <mwl-calendar-event-title
@@ -153,7 +154,8 @@
     [tooltipPlacement]="tooltipPlacement"
     [tooltipEvent]="dayEvent.event"
     [tooltipTemplate]="customTooltipTemplate"
-    [tooltipAppendToBody]="tooltipAppendToBody">
+    [tooltipAppendToBody]="tooltipAppendToBody"
+    (click)="$event.stopPropagation(); eventClicked.emit({event: event})">
 
     <mwl-calendar-event-actions [event]="dayEvent.event"></mwl-calendar-event-actions>
     &ngsp;

@@ -17,11 +17,9 @@ import { AppComponent } from './app.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginMenuComponent } from './components/login-menu/login-menu.component';
-import { MapDialogComponent } from './components/map-dialog/map-dialog.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PlanningSelectComponent } from './components/planning-select/planning-select.component';
 import { UsmapComponent } from './components/usmap/usmap.component';
-import { WorldmapComponent } from './components/worldmap/worldmap.component';
 
 import { OperationsComponent } from './pages/operations/operations.component';
 import { PlanningOpsComponent } from './pages/operations/planning-ops/planning-ops.component';
@@ -66,7 +64,6 @@ import { EventDialogComponent } from './components/event-dialog/event-dialog.com
     OperationsComponent,
     KnowMgmtComponent,
     ContractMgmtComponent,
-    WorldmapComponent,
     AccountComponent,
     SettingsComponent,
     AarComponent,
@@ -86,7 +83,6 @@ import { EventDialogComponent } from './components/event-dialog/event-dialog.com
     AqlMetricsComponent,
     ConstantviewComponent,
     TrainingReqComponent,
-    MapDialogComponent,
     LoginMenuComponent,
     MissionChecklistComponent,
     PlanningOpsComponent,
@@ -115,7 +111,7 @@ import { EventDialogComponent } from './components/event-dialog/event-dialog.com
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    MapDialogComponent
+    EventDialogComponent
   ]
 })
 export class AppModule { }

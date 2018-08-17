@@ -11,7 +11,7 @@ import { CalendarEvent } from 'angular-calendar';
 import { colors } from './cal-utils/colors';
 import { EventColor } from 'calendar-utils';
 import * as scheduledata from 'assets/docs/schedule.json';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { EventDialogComponent } from '../event-dialog/event-dialog.component';
 
 interface ScheduleEntry {
@@ -105,7 +105,9 @@ export class CalendarComponent implements OnInit {
   }
 
   eventClicked({ event }: { event: CalendarEvent }): void {
-    console.log('Event clicked', event);
+    const dialogRef: MatDialogRef<EventDialogComponent> = this.dialog.open(EventDialogComponent, {
+      data: {event: event}
+    });
   }
 
   onSearchChange(newSearch: string): void {
@@ -141,12 +143,5 @@ export class CalendarComponent implements OnInit {
     } else if (!this.searchText && !this.locationSelect) {
       this.calendarEvents = this.calendarEventsComplete;
     }
-  }
-
-  openModal(id: string) {
-    // tslint:disable-next-line:prefer-const
-    let dialogRef = this.dialog.open(EventDialogComponent, {
-      data: {filename: id}
-    });
   }
 }

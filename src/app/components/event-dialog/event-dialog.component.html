@@ -1,3 +1,12 @@
-<p>
-  event-dialog works!
-</p>
+<h1 mat-dialog-title><strong>{{title}}</strong></h1>
+
+<div mat-dialog-content>
+  <strong>Starting</strong>: {{start}}<br />
+  <strong>Ending</strong>: {{end}}<br />
+  <strong>Domain</strong>: {{domain}}<br />
+  <strong>Location</strong>: {{location}}
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="closeDialog()">Close</button>
+</div>
