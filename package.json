@@ -35,7 +35,7 @@
     "node-sass": "^4.14.1",
     "rrule": "^2.2.9",
     "rxjs": "^6.2.2",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
